@@ -8,4 +8,41 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
+    <Button
+        android:id="@+id/contact_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="38dp"
+        android:text="@string/contact" />
+
+    <Button
+        android:id="@+id/courses_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/contact_button"
+        android:layout_below="@+id/contact_button"
+        android:layout_marginTop="16dp"
+        android:text="@string/courses_taught" />
+
+    <Button
+        android:id="@+id/events_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/courses_button"
+        android:layout_below="@+id/courses_button"
+        android:layout_marginTop="15dp"
+        android:text="@string/events" />
+
+    <Button
+        android:id="@+id/news_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/events_button"
+        android:layout_below="@+id/events_button"
+        android:layout_marginTop="16dp"
+        android:text="@string/news" />
+
 </RelativeLayout>
