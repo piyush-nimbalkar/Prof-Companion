@@ -20,26 +20,26 @@ public class MainActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_main);
 		context = this;
 
-		contactButton = (Button) findViewById(R.id.contact_button);
+		contactButton = (Button) findViewById(R.id.buttonContact);
 		contactButton.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()) {
-		case R.id.contact_button:
+		case R.id.buttonContact:
 			Toast.makeText(context, "Here is my contact!", Toast.LENGTH_LONG).show();
 			Intent i = new Intent(context, ContactActivity.class);
 			startActivity(i);
 			break;
-		case R.id.courses_button:
-			Toast.makeText(this, "Here are the courses I taught!", Toast.LENGTH_LONG).show();
+		case R.id.buttonCourses:
+			Toast.makeText(context, "Here are the courses I taught!", Toast.LENGTH_LONG).show();
 			break;
-		case R.id.events_button:
-			Toast.makeText(this, "Here are my events!", Toast.LENGTH_LONG).show();
+		case R.id.buttonEvents:
+			Toast.makeText(context, "Here are my events!", Toast.LENGTH_LONG).show();
 			break;
-		case R.id.news_button:
-			Toast.makeText(this, "Here are my news!", Toast.LENGTH_LONG).show();
+		case R.id.buttonNews:
+			Toast.makeText(context, "Here are my news!", Toast.LENGTH_LONG).show();
 			break;
 		}
 	}

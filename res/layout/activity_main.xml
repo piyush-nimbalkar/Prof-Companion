@@ -9,7 +9,7 @@
     tools:context=".MainActivity" >
 
     <Button
-        android:id="@+id/contact_button"
+        android:id="@+id/buttonContact"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -18,29 +18,29 @@
         android:text="@string/contact" />
 
     <Button
-        android:id="@+id/courses_button"
+        android:id="@+id/buttonCourses"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/contact_button"
-        android:layout_below="@+id/contact_button"
+        android:layout_alignLeft="@+id/buttonContact"
+        android:layout_below="@+id/buttonContact"
         android:layout_marginTop="20dp"
         android:text="@string/courses_taught" />
 
     <Button
-        android:id="@+id/events_button"
+        android:id="@+id/buttonEvents"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/courses_button"
-        android:layout_below="@+id/courses_button"
+        android:layout_alignLeft="@+id/buttonCourses"
+        android:layout_below="@+id/buttonCourses"
         android:layout_marginTop="20dp"
         android:text="@string/events" />
 
     <Button
-        android:id="@+id/news_button"
+        android:id="@+id/buttonNews"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/events_button"
-        android:layout_below="@+id/events_button"
+        android:layout_alignLeft="@+id/buttonEvents"
+        android:layout_below="@+id/buttonEvents"
         android:layout_marginTop="20dp"
         android:text="@string/news" />
 
