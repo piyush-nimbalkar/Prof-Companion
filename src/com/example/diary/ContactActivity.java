@@ -18,7 +18,6 @@ import android.view.View.OnTouchListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ContactActivity extends Activity implements OnTouchListener {
 
@@ -51,22 +50,22 @@ public class ContactActivity extends Activity implements OnTouchListener {
 		//parsing xml data
 		XmlResourceParser parser = getResources().getXml(R.xml.diary_data);
 		DiaryXmlParser diaryParser = new DiaryXmlParser(this);
-		Contact c = null;
+		Contact contact = null;
 
 		try {
-			c = diaryParser.parse(parser);
+			contact = diaryParser.parse(parser);
 		} catch (XmlPullParserException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		textViewName.setText(c.getName());
-		textViewPosition.setText(c.getPosition());
-		textViewEmail.setText(c.getEmail());
-		textViewPhone.setText(c.getPhone());
-		textViewOffice.setText(c.getOffice());
-		textViewOfficeHours.setText(c.getOfficeHour());
+		textViewName.setText(contact.getName());
+		textViewPosition.setText(contact.getPosition());
+		textViewEmail.setText(contact.getEmail());
+		textViewPhone.setText(contact.getPhone());
+		textViewOffice.setText(contact.getOffice());
+		textViewOfficeHours.setText(contact.getOfficeHour());
 
 		editName.setOnTouchListener(this);
 		editPosition.setOnTouchListener(this);
