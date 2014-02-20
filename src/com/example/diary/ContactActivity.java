@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -21,7 +22,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ContactActivity extends Activity implements OnTouchListener {
+public class ContactActivity extends Activity implements OnClickListener {
 
 	private Button editContact; //editPosition, editEmail, editPhone, editOffice, editOfficeHours, editCourse1;
 	private TextView update, textViewName, textViewPosition, textViewEmail, textViewPhone, textViewOffice, textViewOfficeHours, textViewCourse1;
@@ -32,7 +33,8 @@ public class ContactActivity extends Activity implements OnTouchListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contact);
 
-		//creating objects for UI elements		
+		//creating objects for UI elements
+		editContact = (Button) findViewById(R.id.buttonEdit);
 		textViewName = (TextView) findViewById(R.id.TextViewName);
 		textViewPosition = (TextView) findViewById(R.id.TextViewPosition);
 		textViewEmail = (TextView) findViewById(R.id.TextViewEmail);
@@ -41,14 +43,6 @@ public class ContactActivity extends Activity implements OnTouchListener {
 		textViewOfficeHours = (TextView) findViewById(R.id.TextViewOfficeHours);
 		textViewCourse1 = (TextView) findViewById(R.id.TextViewCourse1);
 
-		/*editName = (ImageButton)findViewById(R.id.buttonEditName);
-		editPosition = (ImageButton)findViewById(R.id.buttonEditPosition);
-		editEmail = (ImageButton)findViewById(R.id.buttonEditEmail);
-		editPhone = (ImageButton)findViewById(R.id.buttonEditPhone);
-		editOffice = (ImageButton)findViewById(R.id.buttonEditOffice);
-		editOfficeHours = (ImageButton)findViewById(R.id.buttonEditOfficeHours);
-		editCourse1 = (ImageButton)findViewById(R.id.buttonEditCourse1);
-*/
 		//parsing xml data
 		XmlResourceParser parser = getResources().getXml(R.xml.diary_data);
 		DiaryXmlParser diaryParser = new DiaryXmlParser(this);
@@ -69,17 +63,9 @@ public class ContactActivity extends Activity implements OnTouchListener {
 		textViewOffice.setText(c.getOffice());
 		textViewOfficeHours.setText(c.getOfficeHour());
 		//textViewOfficeHours.setText(c.getOfficeHour());
-		
-/*		editName.setOnTouchListener(this);
-		editPosition.setOnTouchListener(this);
-		editEmail.setOnTouchListener(this);
-		editPhone.setOnTouchListener(this);
-		editOffice.setOnTouchListener(this);
-		editOfficeHours.setOnTouchListener(this);
-		editCourse1.setOnTouchListener(this);
-*/	}	
+	}	
 	
-	@Override
+/*	@Override
 	public boolean onTouch(View v, MotionEvent event) {
 
 		final EditText input;
@@ -153,5 +139,11 @@ public class ContactActivity extends Activity implements OnTouchListener {
 		AlertDialog alertD = alertDialogBuilder.create();
 		alertD.show();
 		return false;
+	}
+*/
+	@Override
+	public void onClick(DialogInterface dialog, int which) {
+		
+		
 	}
 }

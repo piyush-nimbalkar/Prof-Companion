@@ -1,8 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="23dp"
+        android:ems="10" />
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/editTextPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextName"
+        android:layout_below="@+id/editTextName"
+        android:layout_marginTop="18dp"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextPosition"
+        android:layout_below="@+id/editTextPosition"
+        android:layout_marginTop="17dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextEmail"
+        android:layout_below="@+id/editTextEmail"
+        android:layout_marginTop="20dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editTextOffice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextPhone"
+        android:layout_below="@+id/editTextPhone"
+        android:layout_marginTop="20dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editTextOfficeHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextOffice"
+        android:layout_below="@+id/editTextOffice"
+        android:layout_marginTop="17dp"
+        android:ems="10" />
+
+    <EditText
+        android:id="@+id/editTextCourse1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editTextOfficeHours"
+        android:layout_below="@+id/editTextOfficeHours"
+        android:layout_marginTop="16dp"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/buttonDone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="14dp"
+        android:layout_toRightOf="@+id/editTextCourse1"
+        android:text="Done" />
+
+</RelativeLayout>

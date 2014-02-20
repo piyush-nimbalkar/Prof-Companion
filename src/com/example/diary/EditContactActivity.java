@@ -9,7 +9,7 @@ public class EditContactActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_contact);
-
+		
 	}
 
 }
