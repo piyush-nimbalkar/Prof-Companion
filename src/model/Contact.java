@@ -36,8 +36,32 @@ public class Contact implements Serializable {
 		return office;
 	}
 
-	public String getOfficeHour() {
+	public String getOfficeHours() {
 		return officeHour;
 	}
 
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public void setOffice(String office) {
+		this.office = office;
+	}
+
+	public void setOfficeHours(String officehours) {
+		officeHour = officehours;
+	}
 }

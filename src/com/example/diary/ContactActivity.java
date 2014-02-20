@@ -10,9 +10,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ContactActivity extends Activity implements OnClickListener {
 
+	private final int REQUEST_CODE1 = 1;
 	final Context context = this;
 	private Contact contact;
 	private Button buttonEditContact;
@@ -39,7 +41,7 @@ public class ContactActivity extends Activity implements OnClickListener {
 		textViewEmail.setText(contact.getEmail());
 		textViewPhone.setText(contact.getPhone());
 		textViewOffice.setText(contact.getOffice());
-		textViewOfficeHours.setText(contact.getOfficeHour());
+		textViewOfficeHours.setText(contact.getOfficeHours());
 
 		buttonEditContact.setOnClickListener(this);
 	}
@@ -50,9 +52,25 @@ public class ContactActivity extends Activity implements OnClickListener {
 		case R.id.buttonEdit:
 			Intent i = new Intent(context, EditContactActivity.class);
 			i.putExtra("Contact", contact);
-			startActivity(i);
+			startActivityForResult(i, REQUEST_CODE1);
 			break;
 		}
 	}
 
+	protected void onActivityResult(int requestCode, int resultCode,
+			Intent data) {
+		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK){
+				Contact updatedContact = (Contact) data.getExtras().get("Contact");
+				//Toast.makeText(this, updatedContact.getName(), Toast.LENGTH_LONG).show();
+				textViewName.setText(updatedContact.getName());
+				textViewPosition.setText(updatedContact.getPosition());
+				textViewEmail.setText(updatedContact.getEmail());
+				textViewPhone.setText(updatedContact.getPhone());
+				textViewOffice.setText(updatedContact.getOffice());
+				textViewOfficeHours.setText(updatedContact.getOfficeHours());
+				
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+	
 }
