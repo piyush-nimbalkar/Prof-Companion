@@ -42,7 +42,7 @@ public class ContactActivity extends Activity implements OnClickListener {
 		textViewPhone.setText(contact.getPhone());
 		textViewOffice.setText(contact.getOffice());
 		textViewOfficeHours.setText(contact.getOfficeHours());
-
+		textViewCourse1.setText(courseInformation(0));
 		buttonEditContact.setOnClickListener(this);
 	}
 
@@ -72,4 +72,7 @@ public class ContactActivity extends Activity implements OnClickListener {
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 	
+	private String courseInformation(int index) {
+		return contact.getCurrentCourses().get(index).getName() + " (" + contact.getCurrentCourses().get(index).getCRN() + ")";
+	}
 }

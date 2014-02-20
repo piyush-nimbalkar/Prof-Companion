@@ -13,4 +13,11 @@ public class CurrentCourse implements Serializable {
 		CRN = _CRN;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public String getCRN() {
+		return CRN;
+	}
 }
