@@ -1,10 +1,12 @@
 package model;
 
 import java.io.Serializable;
+import java.util.List;
 
 @SuppressWarnings("serial")
 public class Contact implements Serializable {
 	private String type, name, position, email, phone, office, officeHour;
+	private List<CurrentCourse> currentCourses;
 
 	public Contact(ContactBuilder builder) {
 		type = builder.type;
@@ -40,7 +42,10 @@ public class Contact implements Serializable {
 		return officeHour;
 	}
 
-	
+	public List<CurrentCourse> getCurrentCourses() {
+		return currentCourses;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -64,4 +69,9 @@ public class Contact implements Serializable {
 	public void setOfficeHours(String officehours) {
 		officeHour = officehours;
 	}
+
+	public void setCurrentCourses(List<CurrentCourse> courseList) {
+		currentCourses = courseList;
+	}
+
 }

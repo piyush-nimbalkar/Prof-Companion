@@ -1,15 +1,17 @@
 package com.example.diary;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.Contact;
 import model.ContactBuilder;
+import model.CurrentCourse;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.content.Context;
-import android.widget.Toast;
 
 public class DiaryXmlParser {
 
@@ -24,21 +26,20 @@ public class DiaryXmlParser {
 	}
 
 	private Contact readItems(XmlPullParser parser) throws XmlPullParserException, IOException {
-
 		while (parser.next() != XmlPullParser.END_DOCUMENT) {
-			if (parser.getEventType() != XmlPullParser.START_TAG) {
+			if (parser.getEventType() != XmlPullParser.START_TAG)
 				continue;
-			}
-			String name = parser.getName();
 
-			if (name.equals("contact")) {
-				return readContactAttributes(parser);
-			}
+			String name = parser.getName();
+			if (name.equals("contact"))
+				return readContact(parser);
 		}
 		return null;
 	}
 
-	private Contact readContactAttributes(XmlPullParser parser) {
+	private Contact readContact(XmlPullParser parser) throws XmlPullParserException, IOException {
+		List<CurrentCourse> courses = new ArrayList<CurrentCourse>();
+
 		Contact contact = ContactBuilder.contact()
 				.setType(parser.getAttributeValue(null, "type"))
 				.setName(parser.getAttributeValue(null, "name"))
@@ -48,7 +49,21 @@ public class DiaryXmlParser {
 				.setOffice(parser.getAttributeValue(null, "office"))
 				.setOfficeHour(parser.getAttributeValue(null, "office_hour"))
 				.build();
+
+		while (parser.next() != XmlPullParser.END_DOCUMENT) {
+			if (parser.getEventType() != XmlPullParser.START_TAG)
+				continue;
+
+			String name = parser.getName();
+			if (name.equals("course"))
+				courses.add(readCurrentCourseAttributes(parser));
+		}
+		contact.setCurrentCourses(courses);
 		return contact;
+	}
+
+	private CurrentCourse readCurrentCourseAttributes(XmlPullParser parser) {
+		return new CurrentCourse(parser.getAttributeValue(null, "name"), parser.getAttributeValue(null, "CRN"));
 	}
 
 }
