@@ -57,8 +57,7 @@ public class ContactActivity extends Activity implements OnClickListener {
 		}
 	}
 
-	protected void onActivityResult(int requestCode, int resultCode,
-			Intent data) {
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK){
 				Contact updatedContact = (Contact) data.getExtras().get("Contact");
 				//Toast.makeText(this, updatedContact.getName(), Toast.LENGTH_LONG).show();
