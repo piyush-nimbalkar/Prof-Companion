@@ -40,7 +40,7 @@ public class ContactActivity extends Activity implements OnClickListener {
 		textViewEmail = (TextView) findViewById(R.id.TextViewEmail);
 		textViewPhone = (TextView) findViewById(R.id.TextViewPhone);
 		textViewOffice = (TextView) findViewById(R.id.TextViewOffice);
-		textViewOfficeHours = (TextView) findViewById(R.id.TextViewOfficeHours);
+		textViewOfficeHours = (TextView) findViewById(R.id.textViewOfficeHours);
 		textViewCourse1 = (TextView) findViewById(R.id.TextViewCourse1);
 
 		//parsing xml data
