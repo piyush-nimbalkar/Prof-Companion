@@ -1,6 +1,9 @@
 package com.example.diary;
 
 import java.io.IOException;
+
+import model.Contact;
+
 import org.xmlpull.v1.XmlPullParserException;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -15,6 +18,7 @@ import android.view.View.OnTouchListener;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ContactActivity extends Activity {
 
@@ -32,7 +36,7 @@ public class ContactActivity extends Activity {
 		textViewEmail = (TextView) findViewById(R.id.TextViewEmail);
 		textViewPhone = (TextView) findViewById(R.id.TextViewPhone);
 		textViewOffice = (TextView) findViewById(R.id.TextViewOffice);
-		textViewOfficeHours = (TextView) findViewById(R.id.TextViewOffice);
+		textViewOfficeHours = (TextView) findViewById(R.id.TextViewOfficeHour);
 		textViewCourse1 = (TextView) findViewById(R.id.TextViewCourse1);
 
 		editName = (ImageButton)findViewById(R.id.buttonEditName);
@@ -45,13 +49,22 @@ public class ContactActivity extends Activity {
 
 		XmlResourceParser parser = getResources().getXml(R.xml.diary_data);
 		DiaryXmlParser diaryParser = new DiaryXmlParser(this);
+		Contact c = null;
+
 		try {
-			diaryParser.parse(parser);
+			c = diaryParser.parse(parser);
 		} catch (XmlPullParserException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		textViewName.setText(c.getName());
+		textViewPosition.setText(c.getPosition());
+		textViewEmail.setText(c.getEmail());
+		textViewPhone.setText(c.getPhone());
+		textViewOffice.setText(c.getOffice());
+		textViewOfficeHours.setText(c.getOfficeHour());
 
 
 		editName.setOnTouchListener(new OnTouchListener() {

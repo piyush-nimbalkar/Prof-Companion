@@ -2,6 +2,9 @@ package com.example.diary;
 
 import java.io.IOException;
 
+import model.Contact;
+import model.ContactBuilder;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -16,11 +19,11 @@ public class DiaryXmlParser {
 		context = _context;
 	}
 
-	public void parse(XmlPullParser parser) throws XmlPullParserException, IOException {
-        readItems(parser);
+	public Contact parse(XmlPullParser parser) throws XmlPullParserException, IOException {
+		return readItems(parser);
 	}
 
-	private void readItems(XmlPullParser parser) throws XmlPullParserException, IOException {
+	private Contact readItems(XmlPullParser parser) throws XmlPullParserException, IOException {
 
 		while (parser.next() != XmlPullParser.END_DOCUMENT) {
 			if (parser.getEventType() != XmlPullParser.START_TAG) {
@@ -29,20 +32,23 @@ public class DiaryXmlParser {
 			String name = parser.getName();
 
 			if (name.equals("contact")) {
-				readContactAttributes(parser);
+				return readContactAttributes(parser);
 			}
 		}
+		return null;
 	}
 
-	private void readContactAttributes(XmlPullParser parser) {
-		Toast.makeText(context, "Attribute: " + parser.getAttributeValue(null, "type"), Toast.LENGTH_SHORT).show();
-		Toast.makeText(context, "Attribute: " + parser.getAttributeValue(null, "name"), Toast.LENGTH_SHORT).show();
-		Toast.makeText(context, "Attribute: " + parser.getAttributeValue(null, "position"), Toast.LENGTH_SHORT).show();
-		Toast.makeText(context, "Attribute: " + parser.getAttributeValue(null, "office"), Toast.LENGTH_SHORT).show();
-		Toast.makeText(context, "Attribute: " + parser.getAttributeValue(null, "email"), Toast.LENGTH_SHORT).show();
-		Toast.makeText(context, "Attribute: " + parser.getAttributeValue(null, "phone"), Toast.LENGTH_SHORT).show();
-		Toast.makeText(context, "Attribute: " + parser.getAttributeValue(null, "office_hour"), Toast.LENGTH_SHORT).show();
-		Toast.makeText(context, "Attribute: " + parser.getAttributeCount(), Toast.LENGTH_SHORT).show();
+	private Contact readContactAttributes(XmlPullParser parser) {
+		Contact contact = ContactBuilder.contact()
+				.setType(parser.getAttributeValue(null, "type"))
+				.setName(parser.getAttributeValue(null, "name"))
+				.setPosition(parser.getAttributeValue(null, "position"))
+				.setEmail(parser.getAttributeValue(null, "email"))
+				.setPhone(parser.getAttributeValue(null, "phone"))
+				.setOffice(parser.getAttributeValue(null, "office"))
+				.setOfficeHour(parser.getAttributeValue(null, "office_hour"))
+				.build();
+		return contact;
 	}
 
 }
