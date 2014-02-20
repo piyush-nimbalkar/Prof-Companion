@@ -1,14 +1,10 @@
 package com.example.diary;
 
-import java.io.IOException;
-
 import model.Contact;
 
-import org.xmlpull.v1.XmlPullParserException;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.XmlResourceParser;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -27,7 +23,6 @@ public class ContactActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contact);
 
-		//creating objects for UI elements
 		buttonEditContact = (Button) findViewById(R.id.buttonEdit);
 		textViewName = (TextView) findViewById(R.id.TextViewName);
 		textViewPosition = (TextView) findViewById(R.id.TextViewPosition);
@@ -37,17 +32,7 @@ public class ContactActivity extends Activity implements OnClickListener {
 		textViewOfficeHours = (TextView) findViewById(R.id.textViewOfficeHours);
 		textViewCourse1 = (TextView) findViewById(R.id.TextViewCourse1);
 
-		//parsing xml data
-		XmlResourceParser parser = getResources().getXml(R.xml.diary_data);
-		DiaryXmlParser diaryParser = new DiaryXmlParser(this);
-
-		try {
-			contact = diaryParser.parse(parser);
-		} catch (XmlPullParserException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		contact = (Contact) getIntent().getSerializableExtra("Contact");
 
 		textViewName.setText(contact.getName());
 		textViewPosition.setText(contact.getPosition());

@@ -1,9 +1,16 @@
 package com.example.diary;
 
+import java.io.IOException;
+
+import model.Contact;
+
+import org.xmlpull.v1.XmlPullParserException;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.XmlResourceParser;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -13,6 +20,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	private Button contactButton;
 	private Context context;
+	private Contact contact;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,14 +30,25 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		contactButton = (Button) findViewById(R.id.buttonContact);
 		contactButton.setOnClickListener(this);
+
+		XmlResourceParser parser = getResources().getXml(R.xml.diary_data);
+		DiaryXmlParser diaryParser = new DiaryXmlParser(this);
+
+		try {
+			contact = diaryParser.parse(parser);
+		} catch (XmlPullParserException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
 	public void onClick(View v) {
 		switch(v.getId()) {
 		case R.id.buttonContact:
-			Toast.makeText(context, "Here is my contact!", Toast.LENGTH_LONG).show();
 			Intent i = new Intent(context, ContactActivity.class);
+			i.putExtra("Contact", contact);
 			startActivity(i);
 			break;
 		case R.id.buttonCourses:
