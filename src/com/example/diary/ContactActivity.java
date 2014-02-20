@@ -20,10 +20,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class ContactActivity extends Activity {
+public class ContactActivity extends Activity implements OnTouchListener {
 
 	private ImageButton editName, editPosition, editEmail, editPhone, editOffice, editOfficeHours, editCourse1;
-	private TextView textViewName, textViewPosition, textViewEmail, textViewPhone, textViewOffice, textViewOfficeHours, textViewCourse1;
+	private TextView update, textViewName, textViewPosition, textViewEmail, textViewPhone, textViewOffice, textViewOfficeHours, textViewCourse1;
 
 	final Context context = this;
 	@Override
@@ -31,12 +31,13 @@ public class ContactActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contact);
 
-		textViewName = (TextView) findViewById(R.id.textViewName);
+		//creating objects for UI elements
+		textViewName = (TextView) findViewById(R.id.TextViewName);
 		textViewPosition = (TextView) findViewById(R.id.TextViewPosition);
 		textViewEmail = (TextView) findViewById(R.id.TextViewEmail);
 		textViewPhone = (TextView) findViewById(R.id.TextViewPhone);
 		textViewOffice = (TextView) findViewById(R.id.TextViewOffice);
-		textViewOfficeHours = (TextView) findViewById(R.id.TextViewOfficeHour);
+		textViewOfficeHours = (TextView) findViewById(R.id.TextViewOfficeHours);
 		textViewCourse1 = (TextView) findViewById(R.id.TextViewCourse1);
 
 		editName = (ImageButton)findViewById(R.id.buttonEditName);
@@ -47,6 +48,7 @@ public class ContactActivity extends Activity {
 		editOfficeHours = (ImageButton)findViewById(R.id.buttonEditOfficeHours);
 		editCourse1 = (ImageButton)findViewById(R.id.buttonEditCourse1);
 
+		//parsing xml data
 		XmlResourceParser parser = getResources().getXml(R.xml.diary_data);
 		DiaryXmlParser diaryParser = new DiaryXmlParser(this);
 		Contact c = null;
@@ -66,41 +68,88 @@ public class ContactActivity extends Activity {
 		textViewOffice.setText(c.getOffice());
 		textViewOfficeHours.setText(c.getOfficeHour());
 
+		editName.setOnTouchListener(this);
+		editPosition.setOnTouchListener(this);
+		editEmail.setOnTouchListener(this);
+		editPhone.setOnTouchListener(this);
+		editOffice.setOnTouchListener(this);
+		editOfficeHours.setOnTouchListener(this);
+		editCourse1.setOnTouchListener(this);
+	}	
+	
+	@Override
+	public boolean onTouch(View v, MotionEvent event) {
 
-		editName.setOnTouchListener(new OnTouchListener() {
+		final EditText input;
+		TextView title;
 
-			@Override
-			public boolean onTouch(View v, MotionEvent event) {
-				//get edit_name.xml view
-				LayoutInflater layoutInflater = LayoutInflater.from(context);
-				View promptView = layoutInflater.inflate(R.layout.dialog_edit_name, null);
+		LayoutInflater layoutInflater = LayoutInflater.from(context);
+		View promptView = layoutInflater.inflate(R.layout.dialog_edit_name, null);
 
-				AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+		switch(v.getId()) {
+		case R.id.buttonEditName:
+			title = (TextView) promptView.findViewById(R.id.textViewDialog);
+			title.setText("Edit Name");
+			update = (TextView) findViewById(R.id.TextViewName);
+			break;
+		case R.id.buttonEditPosition:
+			title = (TextView) promptView.findViewById(R.id.textViewDialog);
+			title.setText("Edit Position");
+			update = (TextView) findViewById(R.id.TextViewPosition);
+			break;
+		case R.id.buttonEditEmail:
+			title = (TextView) promptView.findViewById(R.id.textViewDialog);
+			title.setText("Edit Email");
+			update = (TextView) findViewById(R.id.TextViewEmail);
+			break;
+		case R.id.buttonEditPhone:
+			title = (TextView) promptView.findViewById(R.id.textViewDialog);
+			title.setText("Edit Phone");
+			update = (TextView) findViewById(R.id.TextViewPhone);
+			break;
+		case R.id.buttonEditOffice:
+			title = (TextView) promptView.findViewById(R.id.textViewDialog);
+			title.setText("Edit Office");
+			update = (TextView) findViewById(R.id.TextViewOffice);
+			break;
+		case R.id.buttonEditOfficeHours:
+			title = (TextView) promptView.findViewById(R.id.textViewDialog);
+			title.setText("Edit Office Hours");
+			update = (TextView) findViewById(R.id.TextViewOfficeHours);
+			break;
+		case R.id.buttonEditCourse1:
+			title = (TextView) promptView.findViewById(R.id.textViewDialog);
+			title.setText("Edit Course 1");
+			update = (TextView) findViewById(R.id.TextViewCourse1);
+			break;
+		}
 
-				// set edit_name.xml to be the layout file of the alertdialog builder
-				alertDialogBuilder.setView(promptView);
-				final EditText input = (EditText) promptView.findViewById(R.id.userInput);
+		input = (EditText) promptView.findViewById(R.id.userInputDialog);
 
-				// setup a dialog window
-				alertDialogBuilder
-				.setCancelable(true)
-				.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int id) {
-						// get user input and set it to result
-						textViewName.setText(input.getText());
-					}
-				})
-				.setNegativeButton("Cancel",
-						new DialogInterface.OnClickListener() {
-					public void onClick(DialogInterface dialog, int id) {
-						dialog.cancel();
-					}
-				});
-				//create alert dialog
-				AlertDialog alertD = alertDialogBuilder.create();
-				alertD.show();
-				return false;
+		//get edit_name.xml view
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+
+		// set edit_name.xml to be the layout file of the alertdialog builder
+		alertDialogBuilder.setView(promptView);
+
+		// setup a dialog window
+		alertDialogBuilder
+		.setCancelable(true)
+		.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				// get user input and set it to result
+				update.setText(input.getText());
+			}
+		})
+		.setNegativeButton("Cancel",
+				new DialogInterface.OnClickListener() {
+			public void onClick(DialogInterface dialog, int id) {
+				dialog.cancel();
 			}
 		});
+		//create alert dialog
+		AlertDialog alertD = alertDialogBuilder.create();
+		alertD.show();
+		return false;
 	}
 }
