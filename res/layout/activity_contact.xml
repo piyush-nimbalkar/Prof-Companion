@@ -97,12 +97,12 @@
             android:layout_below="@+id/TextViewPhone"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:layout_toLeftOf="@+id/IbuttonEditPhone"
+            android:layout_toLeftOf="@+id/buttonEditPhone"
             android:text="Phone"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <ImageButton
-            android:id="@+id/IbuttonEditPhone"
+            android:id="@+id/buttonEditPhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
@@ -150,12 +150,12 @@
             android:layout_below="@+id/TextViewOfficeHour"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:layout_toLeftOf="@+id/buttonEditOfficeHour"
+            android:layout_toLeftOf="@+id/buttonEditOfficeHours"
             android:text="Office Hour"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <ImageButton
-            android:id="@+id/buttonEditOfficeHour"
+            android:id="@+id/buttonEditOfficeHours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
