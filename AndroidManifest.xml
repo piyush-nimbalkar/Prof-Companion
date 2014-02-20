@@ -26,6 +26,10 @@
             android:name="com.example.diary.ContactActivity"
             android:label="@string/app_name" >
         </activity>
-    </application>
+        <activity
+            android:name="com.example.diary.EditContactActivity"
+            android:label="@string/app_name" >
+        </activity>
+	</application>
 
 </manifest>
