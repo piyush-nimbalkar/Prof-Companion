@@ -1,6 +1,9 @@
 package model;
 
-public class Contact {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class Contact implements Serializable {
 	private String type, name, position, email, phone, office, officeHour;
 
 	public Contact(ContactBuilder builder) {
