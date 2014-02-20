@@ -15,13 +15,15 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnTouchListener;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ContactActivity extends Activity implements OnTouchListener {
 
-	private ImageButton editName, editPosition, editEmail, editPhone, editOffice, editOfficeHours, editCourse1;
+	private Button editContact; //editPosition, editEmail, editPhone, editOffice, editOfficeHours, editCourse1;
 	private TextView update, textViewName, textViewPosition, textViewEmail, textViewPhone, textViewOffice, textViewOfficeHours, textViewCourse1;
 
 	final Context context = this;
@@ -30,7 +32,7 @@ public class ContactActivity extends Activity implements OnTouchListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contact);
 
-		//creating objects for UI elements
+		//creating objects for UI elements		
 		textViewName = (TextView) findViewById(R.id.TextViewName);
 		textViewPosition = (TextView) findViewById(R.id.TextViewPosition);
 		textViewEmail = (TextView) findViewById(R.id.TextViewEmail);
@@ -39,42 +41,43 @@ public class ContactActivity extends Activity implements OnTouchListener {
 		textViewOfficeHours = (TextView) findViewById(R.id.TextViewOfficeHours);
 		textViewCourse1 = (TextView) findViewById(R.id.TextViewCourse1);
 
-		editName = (ImageButton)findViewById(R.id.buttonEditName);
+		/*editName = (ImageButton)findViewById(R.id.buttonEditName);
 		editPosition = (ImageButton)findViewById(R.id.buttonEditPosition);
 		editEmail = (ImageButton)findViewById(R.id.buttonEditEmail);
 		editPhone = (ImageButton)findViewById(R.id.buttonEditPhone);
 		editOffice = (ImageButton)findViewById(R.id.buttonEditOffice);
 		editOfficeHours = (ImageButton)findViewById(R.id.buttonEditOfficeHours);
 		editCourse1 = (ImageButton)findViewById(R.id.buttonEditCourse1);
-
+*/
 		//parsing xml data
 		XmlResourceParser parser = getResources().getXml(R.xml.diary_data);
 		DiaryXmlParser diaryParser = new DiaryXmlParser(this);
-		Contact contact = null;
+		Contact c = null;
 
 		try {
-			contact = diaryParser.parse(parser);
+			c = diaryParser.parse(parser);
 		} catch (XmlPullParserException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		textViewName.setText(contact.getName());
-		textViewPosition.setText(contact.getPosition());
-		textViewEmail.setText(contact.getEmail());
-		textViewPhone.setText(contact.getPhone());
-		textViewOffice.setText(contact.getOffice());
-		textViewOfficeHours.setText(contact.getOfficeHour());
-
-		editName.setOnTouchListener(this);
+		textViewName.setText(c.getName());
+		textViewPosition.setText(c.getPosition());
+		textViewEmail.setText(c.getEmail());
+		textViewPhone.setText(c.getPhone());
+		textViewOffice.setText(c.getOffice());
+		textViewOfficeHours.setText(c.getOfficeHour());
+		//textViewOfficeHours.setText(c.getOfficeHour());
+		
+/*		editName.setOnTouchListener(this);
 		editPosition.setOnTouchListener(this);
 		editEmail.setOnTouchListener(this);
 		editPhone.setOnTouchListener(this);
 		editOffice.setOnTouchListener(this);
 		editOfficeHours.setOnTouchListener(this);
 		editCourse1.setOnTouchListener(this);
-	}	
+*/	}	
 	
 	@Override
 	public boolean onTouch(View v, MotionEvent event) {

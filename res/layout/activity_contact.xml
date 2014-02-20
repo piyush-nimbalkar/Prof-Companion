@@ -18,18 +18,8 @@
             android:layout_below="@+id/TextViewName"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:layout_toLeftOf="@+id/buttonEditName"
             android:text="Name"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <ImageButton
-            android:id="@+id/buttonEditName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:src="@android:drawable/ic_menu_edit" />
 
     </RelativeLayout>
 
@@ -45,18 +35,8 @@
             android:layout_below="@+id/TextViewPosition"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:layout_toLeftOf="@+id/buttonEditPosition"
             android:text="Position"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <ImageButton
-            android:id="@+id/buttonEditPosition"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:src="@android:drawable/ic_menu_edit" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -71,18 +51,8 @@
             android:layout_below="@+id/TextViewEmail"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:layout_toLeftOf="@+id/buttonEditEmail"
             android:text="Email"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <ImageButton
-            android:id="@+id/buttonEditEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:src="@android:drawable/ic_menu_edit" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -97,18 +67,8 @@
             android:layout_below="@+id/TextViewPhone"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:layout_toLeftOf="@+id/buttonEditPhone"
             android:text="Phone"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <ImageButton
-            android:id="@+id/buttonEditPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:src="@android:drawable/ic_menu_edit" />
 
     </RelativeLayout>
 
@@ -124,18 +84,8 @@
             android:layout_below="@+id/TextViewOffice"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:layout_toLeftOf="@+id/buttonEditOffice"
             android:text="Office"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <ImageButton
-            android:id="@+id/buttonEditOffice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:src="@android:drawable/ic_menu_edit" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -150,18 +100,8 @@
             android:layout_below="@+id/TextViewOfficeHours"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:layout_toLeftOf="@+id/buttonEditOfficeHours"
             android:text="Office Hour"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <ImageButton
-            android:id="@+id/buttonEditOfficeHours"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:src="@android:drawable/ic_menu_edit" />
 
     </RelativeLayout>
 
@@ -177,18 +117,25 @@
             android:layout_below="@+id/TextView06"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
-            android:layout_toLeftOf="@+id/buttonEditCourse1"
             android:text="Course Name"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <ImageButton
-            android:id="@+id/buttonEditCourse1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginRight="20dp"
-            android:src="@android:drawable/ic_menu_edit" />
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+	    <Button
+	        android:id="@+id/buttonEdit"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentRight="true"
+	        android:layout_marginLeft="60dp"
+	        android:layout_marginRight="60dp"
+	        android:layout_marginTop="20dp"
+	        android:text="Button" />
+
+    </RelativeLayout>
+    
 </LinearLayout>
