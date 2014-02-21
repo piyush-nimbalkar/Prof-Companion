@@ -6,17 +6,20 @@ import java.util.List;
 
 import model.Contact;
 import model.ContactBuilder;
+import model.Course;
 import model.CurrentCourse;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.content.Context;
+import android.widget.Toast;
 
 public class DiaryXmlParser {
 
 	private Context context;
 	private Contact contact;
+	private List<Course> courses = new ArrayList<Course>();
 
 	public DiaryXmlParser(Context _context) {
 		context = _context;
@@ -34,15 +37,15 @@ public class DiaryXmlParser {
 		while (parser.next() != XmlPullParser.END_DOCUMENT) {
 			if (parser.getEventType() != XmlPullParser.START_TAG)
 				continue;
-
-			String name = parser.getName();
-			if (name.equals("contact"))
+			if (parser.getName().equals("contact"))
 				readContact(parser);
+			if (parser.getName().equals("courses"))
+				courses.add(readCourse(parser));
 		}
 	}
 
 	private void readContact(XmlPullParser parser) throws XmlPullParserException, IOException {
-		List<CurrentCourse> courses = new ArrayList<CurrentCourse>();
+		List<CurrentCourse> currentCourses = new ArrayList<CurrentCourse>();
 
 		contact = ContactBuilder.contact()
 				.setType(parser.getAttributeValue(null, "type"))
@@ -57,16 +60,22 @@ public class DiaryXmlParser {
 		while (parser.next() != XmlPullParser.END_DOCUMENT) {
 			if (parser.getEventType() != XmlPullParser.START_TAG)
 				continue;
-
-			String name = parser.getName();
-			if (name.equals("course"))
-				courses.add(readCurrentCourseAttributes(parser));
+			if (!parser.getName().equals("course"))
+				break;
+			currentCourses.add(readCurrentCourseAttributes(parser));
 		}
-		contact.setCurrentCourses(courses);
+		contact.setCurrentCourses(currentCourses);
 	}
 
 	private CurrentCourse readCurrentCourseAttributes(XmlPullParser parser) {
 		return new CurrentCourse(parser.getAttributeValue(null, "name"), parser.getAttributeValue(null, "CRN"));
 	}
 
+	private Course readCourse(XmlPullParser parser) {
+		return new Course(parser.getAttributeValue(null, "CN"),
+				parser.getAttributeValue(null, "courseTitle"),
+				parser.getAttributeValue(null, "creditHours"),
+				parser.getAttributeValue(null, "Days"),
+				parser.getAttributeValue(null, "Time"));
+	}
 }
