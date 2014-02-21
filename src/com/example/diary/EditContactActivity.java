@@ -1,20 +1,23 @@
 package com.example.diary;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import model.Contact;
+import model.CurrentCourse;
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class EditContactActivity extends Activity implements OnClickListener {
 
 	private Contact contact;
-	private EditText editName, editPosition, editEmail, editPhone, editOffice, editOfficeHours, editCourse1;
+	private EditText editName, editPosition, editEmail, editPhone, editOffice, editOfficeHours;
+	private EditText editCourse1, editCourseNo1, editCourse2, editCourseNo2;
 	private Button doneEditing;
 
 	@Override
@@ -29,20 +32,23 @@ public class EditContactActivity extends Activity implements OnClickListener {
 		editOffice = (EditText) findViewById(R.id.editTextOffice);
 		editOfficeHours = (EditText) findViewById(R.id.editTextOfficeHours);
 		editCourse1 = (EditText) findViewById(R.id.editTextCourse1);
+		editCourseNo1 = (EditText) findViewById(R.id.editTextCourseNo1);
+		editCourse2 = (EditText) findViewById(R.id.editTextCourse2);
+		editCourseNo2 = (EditText) findViewById(R.id.editTextCourseNo2);
 		doneEditing = (Button) findViewById(R.id.buttonDone);
 		
 		contact = (Contact) getIntent().getSerializableExtra("Contact");
-		Toast.makeText(this, contact.getEmail(), Toast.LENGTH_SHORT).show();
 		
-		//setInfo(contact);
-
 		editName.setText(contact.getName());
 		editPosition.setText(contact.getPosition());
 		editEmail.setText(contact.getEmail());
 		editPhone.setText(contact.getPhone());
 		editOffice.setText(contact.getOffice());
 		editOfficeHours.setText(contact.getOfficeHours());
-		//editName.setText(contact.getCourse1());
+		editCourse1.setText(contact.getCurrentCourses().get(0).getName());
+		editCourseNo1.setText(contact.getCurrentCourses().get(0).getCRN());
+		editCourse2.setText(contact.getCurrentCourses().get(1).getName());
+		editCourseNo2.setText(contact.getCurrentCourses().get(1).getCRN());
 		
 		doneEditing.setOnClickListener(this);
 	}
@@ -54,7 +60,10 @@ public class EditContactActivity extends Activity implements OnClickListener {
 		contact.setPhone(editPhone.getText().toString());
 		contact.setOffice(editOffice.getText().toString());
 		contact.setOfficeHours(editOfficeHours.getText().toString());
-		//contact.setName(editCourse.getText());
+		List<CurrentCourse> courses = new ArrayList<CurrentCourse>();
+		courses.add(new CurrentCourse(editCourse1.getText().toString(), editCourseNo1.getText().toString()));
+		courses.add(new CurrentCourse(editCourse2.getText().toString(), editCourseNo2.getText().toString()));
+		contact.setCurrentCourses(courses);
 		finish();
 	}
 	
