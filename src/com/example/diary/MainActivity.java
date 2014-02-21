@@ -1,8 +1,10 @@
 package com.example.diary;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import model.Contact;
+import model.Course;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -22,6 +24,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Button contactButton, coursesButton, eventsButton, newsButton;
 	private Context context;
 	private Contact contact;
+	private ArrayList<Course> courses = new ArrayList<Course>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,18 +54,23 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 
 		contact = diaryParser.getContact();
+		courses = diaryParser.getCourses();
 	}
 
 	@Override
 	public void onClick(View v) {
+		Intent i;
+
 		switch(v.getId()) {
 		case R.id.buttonContact:
-			Intent i = new Intent(context, ContactActivity.class);
+			i = new Intent(context, ContactActivity.class);
 			i.putExtra("Contact", contact);
 			startActivityForResult(i, REQUEST_CODE1);
 			break;
 		case R.id.buttonCourses:
-			Toast.makeText(context, "Here are the courses I taught!", Toast.LENGTH_LONG).show();
+			i = new Intent(context, CourseActivity.class);
+			i.putParcelableArrayListExtra("Courses", courses);
+			startActivityForResult(i, REQUEST_CODE1);
 			break;
 		case R.id.buttonEvents:
 			Toast.makeText(context, "Here are my events!", Toast.LENGTH_LONG).show();
