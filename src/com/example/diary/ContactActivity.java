@@ -18,7 +18,8 @@ public class ContactActivity extends Activity implements OnClickListener {
 	final Context context = this;
 	private Contact contact;
 	private Button buttonEditContact;
-	private TextView textViewName, textViewPosition, textViewEmail, textViewPhone, textViewOffice, textViewOfficeHours, textViewCourse1;
+	private TextView textViewName, textViewPosition, textViewEmail, textViewPhone;
+	private TextView textViewOffice, textViewOfficeHours, textViewCourse1, textViewCourse2;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,8 @@ public class ContactActivity extends Activity implements OnClickListener {
 		textViewPhone = (TextView) findViewById(R.id.TextViewPhone);
 		textViewOffice = (TextView) findViewById(R.id.TextViewOffice);
 		textViewOfficeHours = (TextView) findViewById(R.id.textViewOfficeHours);
-		textViewCourse1 = (TextView) findViewById(R.id.TextViewCourse1);
+		textViewCourse1 = (TextView) findViewById(R.id.textViewCourse1);
+		textViewCourse2 = (TextView) findViewById(R.id.textViewCourse2);
 
 		contact = (Contact) getIntent().getSerializableExtra("Contact");
 
@@ -43,6 +45,7 @@ public class ContactActivity extends Activity implements OnClickListener {
 		textViewOffice.setText(contact.getOffice());
 		textViewOfficeHours.setText(contact.getOfficeHours());
 		textViewCourse1.setText(courseInformation(0));
+		textViewCourse2.setText(courseInformation(1));
 		buttonEditContact.setOnClickListener(this);
 	}
 

@@ -110,11 +110,27 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/TextViewCourse1"
+            android:id="@+id/textViewCourse1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/TextView06"
+            android:layout_below="@+id/textViewCourse1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:text="Course Name"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textViewCourse2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textViewCourse2"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="15dp"
             android:text="Course Name"
