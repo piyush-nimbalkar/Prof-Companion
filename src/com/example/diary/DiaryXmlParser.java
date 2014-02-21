@@ -8,6 +8,7 @@ import model.Contact;
 import model.ContactBuilder;
 import model.Course;
 import model.CurrentCourse;
+import model.Event;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -20,6 +21,7 @@ public class DiaryXmlParser {
 	private Context context;
 	private Contact contact;
 	private List<Course> courses = new ArrayList<Course>();
+	private List<Event> events = new ArrayList<Event>();
 
 	public DiaryXmlParser(Context _context) {
 		context = _context;
@@ -41,6 +43,8 @@ public class DiaryXmlParser {
 				readContact(parser);
 			if (parser.getName().equals("courses"))
 				courses.add(readCourse(parser));
+			if (parser.getName().equals("events"))
+				events.add(readEvent(parser));
 		}
 	}
 
@@ -78,4 +82,12 @@ public class DiaryXmlParser {
 				parser.getAttributeValue(null, "Days"),
 				parser.getAttributeValue(null, "Time"));
 	}
+
+	private Event readEvent(XmlPullParser parser) {
+		return new Event(parser.getAttributeValue(null, "type"),
+				parser.getAttributeValue(null, "time"),
+				parser.getAttributeValue(null, "day"),
+				parser.getAttributeValue(null, "note"));
+	}
+
 }
