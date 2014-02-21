@@ -6,71 +6,133 @@
     android:orientation="vertical"
     tools:context=".EditContactActivity" >
 
-    <EditText
-        android:id="@+id/editTextName"
+    <TextView
+        android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="23dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:text="Name"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textViewName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="10dp"
         android:ems="10" />
+
+    <TextView
+        android:id="@+id/textViewPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextPosition"
+        android:layout_alignLeft="@+id/textViewName"
+        android:text="Position"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
         android:id="@+id/editTextPosition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextName"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/editTextName"
-        android:layout_marginTop="18dp"
-        android:ems="10" >
+        android:layout_marginRight="10dp"
+        android:ems="10" />
 
-        <requestFocus />
-    </EditText>
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextEmail"
+        android:layout_alignLeft="@+id/textViewPosition"
+        android:text="Email"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextPosition"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/editTextPosition"
-        android:layout_marginTop="17dp"
+        android:layout_marginRight="10dp"
         android:ems="10" />
+
+    <TextView
+        android:id="@+id/textViewPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextPhone"
+        android:layout_alignLeft="@+id/textViewEmail"
+        android:text="Phone"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextEmail"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/editTextEmail"
-        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
         android:ems="10" />
+
+    <TextView
+        android:id="@+id/textViewOffice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextOffice"
+        android:layout_alignLeft="@+id/textViewPhone"
+        android:text="Office"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
         android:id="@+id/editTextOffice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextPhone"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/editTextPhone"
-        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
         android:ems="10" />
+
+     <TextView
+        android:id="@+id/textViewOfficeHours"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextOfficeHours"
+        android:layout_alignLeft="@+id/textViewOffice"
+        android:text="Office Hrs"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
         android:id="@+id/editTextOfficeHours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextOffice"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/editTextOffice"
-        android:layout_marginTop="17dp"
+        android:layout_marginRight="10dp"
         android:ems="10" />
+
+     <TextView
+        android:id="@+id/textViewCourse1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextCourse1"
+        android:layout_alignLeft="@+id/textViewOfficeHours"
+        android:text="Course"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
         android:id="@+id/editTextCourse1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextOfficeHours"
+        android:layout_alignParentRight="true"
         android:layout_below="@+id/editTextOfficeHours"
-        android:layout_marginTop="16dp"
+        android:layout_marginRight="10dp"
         android:ems="10" />
 
     <Button
@@ -78,71 +140,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="14dp"
-        android:layout_toRightOf="@+id/editTextCourse1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
         android:text="Done" />
-
-    <TextView
-        android:id="@+id/textViewName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextName"
-        android:layout_alignParentTop="true"
-        android:text="Name"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textViewPosition"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextName"
-        android:layout_below="@+id/editTextName"
-        android:text="Position"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textViewEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextEmail"
-        android:layout_below="@+id/editTextPosition"
-        android:text="Email"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textViewPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextPhone"
-        android:layout_below="@+id/editTextEmail"
-        android:text="Phone"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textViewOffice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextOffice"
-        android:layout_below="@+id/editTextPhone"
-        android:text="Office"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textViewOfficeHours"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextOfficeHours"
-        android:layout_below="@+id/editTextOffice"
-        android:text="Office Hours"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textViewCourse1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editTextOfficeHours"
-        android:layout_below="@+id/editTextOfficeHours"
-        android:text="Course"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>
