@@ -19,7 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity implements OnClickListener {
 
 	private final int REQUEST_CODE1 = 1;
-	private Button contactButton;
+	private Button contactButton, coursesButton, eventsButton, newsButton;
 	private Context context;
 	private Contact contact;
 
@@ -30,7 +30,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		context = this;
 
 		contactButton = (Button) findViewById(R.id.buttonContact);
+		coursesButton = (Button) findViewById(R.id.buttonCourses);
+		eventsButton = (Button) findViewById(R.id.buttonEvents);
+		newsButton = (Button) findViewById(R.id.buttonNews);
+
 		contactButton.setOnClickListener(this);
+		coursesButton.setOnClickListener(this);
+		eventsButton.setOnClickListener(this);
+		newsButton.setOnClickListener(this);
 
 		XmlResourceParser parser = getResources().getXml(R.xml.diary_data);
 		DiaryXmlParser diaryParser = new DiaryXmlParser(this);
