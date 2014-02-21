@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import model.Contact;
 import model.Course;
+import model.Event;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -25,6 +26,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Context context;
 	private Contact contact;
 	private ArrayList<Course> courses = new ArrayList<Course>();
+	private ArrayList<Event> events = new ArrayList<Event>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		contact = diaryParser.getContact();
 		courses = diaryParser.getCourses();
+		events= diaryParser.getEvents();
 	}
 
 	@Override
@@ -73,7 +76,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			startActivityForResult(i, REQUEST_CODE1);
 			break;
 		case R.id.buttonEvents:
-			Toast.makeText(context, "Here are my events!", Toast.LENGTH_LONG).show();
+			i = new Intent(context, EventActivity.class);
+			i.putParcelableArrayListExtra("Events", events);
+			startActivityForResult(i, REQUEST_CODE1);
 			break;
 		case R.id.buttonNews:
 			Toast.makeText(context, "Here are my news!", Toast.LENGTH_LONG).show();
