@@ -54,17 +54,21 @@ public class EditContactActivity extends Activity implements OnClickListener {
 	}
 
 	public void onClick(View v) {
-		contact.setName(editName.getText().toString());
-		contact.setPosition(editPosition.getText().toString());
-		contact.setEmail(editEmail.getText().toString());
-		contact.setPhone(editPhone.getText().toString());
-		contact.setOffice(editOffice.getText().toString());
-		contact.setOfficeHours(editOfficeHours.getText().toString());
-		List<CurrentCourse> courses = new ArrayList<CurrentCourse>();
-		courses.add(new CurrentCourse(editCourse1.getText().toString(), editCourseNo1.getText().toString()));
-		courses.add(new CurrentCourse(editCourse2.getText().toString(), editCourseNo2.getText().toString()));
-		contact.setCurrentCourses(courses);
-		finish();
+		switch(v.getId()) {
+		case R.id.buttonDone:
+			contact.setName(editName.getText().toString());
+			contact.setPosition(editPosition.getText().toString());
+			contact.setEmail(editEmail.getText().toString());
+			contact.setPhone(editPhone.getText().toString());
+			contact.setOffice(editOffice.getText().toString());
+			contact.setOfficeHours(editOfficeHours.getText().toString());
+			List<CurrentCourse> courses = new ArrayList<CurrentCourse>();
+			courses.add(new CurrentCourse(editCourse1.getText().toString(), editCourseNo1.getText().toString()));
+			courses.add(new CurrentCourse(editCourse2.getText().toString(), editCourseNo2.getText().toString()));
+			contact.setCurrentCourses(courses);
+			finish();
+			break;
+		}
 	}
 	
 	public void finish() {
