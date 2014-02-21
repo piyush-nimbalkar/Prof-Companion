@@ -10,6 +10,7 @@ import android.widget.Toast;
 public class EventActivity extends Activity {
 
 	private ArrayList<Event> events = new ArrayList<Event>();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -23,7 +23,7 @@ public class DiaryXmlParser {
 	private Contact contact;
 	private ArrayList<Course> courses = new ArrayList<Course>();
 	private ArrayList<Event> events = new ArrayList<Event>();
-	private List<News> news = new ArrayList<News>();
+	private ArrayList<News> news = new ArrayList<News>();
 
 	public DiaryXmlParser(Context _context) {
 		context = _context;
@@ -43,6 +43,10 @@ public class DiaryXmlParser {
 
 	public ArrayList<Event> getEvents() {
 		return events;
+	}
+
+	public ArrayList<News> getNews() {
+		return news;
 	}
 
 	private void readItems(XmlPullParser parser) throws XmlPullParserException, IOException {

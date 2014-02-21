@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import model.Contact;
 import model.Course;
 import model.Event;
+import model.News;
 
 import org.xmlpull.v1.XmlPullParserException;
 
@@ -17,7 +18,6 @@ import android.content.res.XmlResourceParser;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -27,6 +27,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Contact contact;
 	private ArrayList<Course> courses = new ArrayList<Course>();
 	private ArrayList<Event> events = new ArrayList<Event>();
+	private ArrayList<News> news = new ArrayList<News>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +59,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		contact = diaryParser.getContact();
 		courses = diaryParser.getCourses();
 		events= diaryParser.getEvents();
+		news = diaryParser.getNews();
 	}
 
 	@Override
@@ -81,7 +83,9 @@ public class MainActivity extends Activity implements OnClickListener {
 			startActivityForResult(i, REQUEST_CODE1);
 			break;
 		case R.id.buttonNews:
-			Toast.makeText(context, "Here are my news!", Toast.LENGTH_LONG).show();
+			i = new Intent(context, NewsActivity.class);
+			i.putParcelableArrayListExtra("News", news);
+			startActivityForResult(i, REQUEST_CODE1);
 			break;
 		}
 	}

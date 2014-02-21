@@ -10,6 +10,7 @@ import android.widget.Toast;
 public class CourseActivity extends Activity {
 
 	private ArrayList<Course> courses = new ArrayList<Course>();
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
