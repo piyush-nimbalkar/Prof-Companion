@@ -36,12 +36,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		DiaryXmlParser diaryParser = new DiaryXmlParser(this);
 
 		try {
-			contact = diaryParser.parse(parser);
+			diaryParser.parse(parser);
 		} catch (XmlPullParserException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
+		contact = diaryParser.getContact();
 	}
 
 	@Override
@@ -67,7 +69,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK)
 				contact = (Contact) data.getExtras().get("Contact");
-		Toast.makeText(this, contact.getName(), Toast.LENGTH_LONG).show();
+
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 

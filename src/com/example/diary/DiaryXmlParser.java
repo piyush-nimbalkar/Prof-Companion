@@ -16,31 +16,35 @@ import android.content.Context;
 public class DiaryXmlParser {
 
 	private Context context;
+	private Contact contact;
 
 	public DiaryXmlParser(Context _context) {
 		context = _context;
 	}
 
-	public Contact parse(XmlPullParser parser) throws XmlPullParserException, IOException {
-		return readItems(parser);
+	public void parse(XmlPullParser parser) throws XmlPullParserException, IOException {
+		readItems(parser);
 	}
 
-	private Contact readItems(XmlPullParser parser) throws XmlPullParserException, IOException {
+	public Contact getContact() {
+		return contact;
+	}
+
+	private void readItems(XmlPullParser parser) throws XmlPullParserException, IOException {
 		while (parser.next() != XmlPullParser.END_DOCUMENT) {
 			if (parser.getEventType() != XmlPullParser.START_TAG)
 				continue;
 
 			String name = parser.getName();
 			if (name.equals("contact"))
-				return readContact(parser);
+				readContact(parser);
 		}
-		return null;
 	}
 
-	private Contact readContact(XmlPullParser parser) throws XmlPullParserException, IOException {
+	private void readContact(XmlPullParser parser) throws XmlPullParserException, IOException {
 		List<CurrentCourse> courses = new ArrayList<CurrentCourse>();
 
-		Contact contact = ContactBuilder.contact()
+		contact = ContactBuilder.contact()
 				.setType(parser.getAttributeValue(null, "type"))
 				.setName(parser.getAttributeValue(null, "name"))
 				.setPosition(parser.getAttributeValue(null, "position"))
@@ -59,7 +63,6 @@ public class DiaryXmlParser {
 				courses.add(readCurrentCourseAttributes(parser));
 		}
 		contact.setCurrentCourses(courses);
-		return contact;
 	}
 
 	private CurrentCourse readCurrentCourseAttributes(XmlPullParser parser) {
