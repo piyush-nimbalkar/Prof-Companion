@@ -99,7 +99,7 @@
         android:layout_marginRight="10dp"
         android:ems="10" />
 
-     <TextView
+    <TextView
         android:id="@+id/textViewOfficeHours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -117,7 +117,7 @@
         android:layout_marginRight="10dp"
         android:ems="10" />
 
-     <TextView
+    <TextView
         android:id="@+id/textViewCourse1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -132,6 +132,60 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/editTextOfficeHours"
+        android:layout_marginRight="10dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textViewCourseNo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextCourseNo1"
+        android:layout_alignLeft="@+id/textViewCourse1"
+        android:text="Course No"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editTextCourseNo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editTextCourse1"
+        android:layout_marginRight="10dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textViewCourse2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextCourse2"
+        android:layout_alignLeft="@+id/textViewCourseNo1"
+        android:text="Course"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editTextCourse2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editTextCourseNo1"
+        android:layout_marginRight="10dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textViewCourseNo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editTextCourseNo2"
+        android:layout_alignLeft="@+id/textViewCourse2"
+        android:text="Course No"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/editTextCourseNo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editTextCourse2"
         android:layout_marginRight="10dp"
         android:ems="10" />
 
