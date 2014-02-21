@@ -14,4 +14,14 @@
 	<string name="edit_phone">Edit Phone</string>
 	<string name="edit_office">Edit Office</string>
 	<string name="edit_office_hours">Edit Office Hours</string>
+	<string name="contact_name">Name</string>
+	<string name="contact_position">Position</string>
+	<string name="contact_email">Email</string>
+	<string name="contact_phone">Phone</string>
+	<string name="contact_office">Office</string>
+	<string name="contact_office_hours">Office Hrs</string>
+	<string name="contact_course">Course</string>
+	<string name="contact_course_no">Course No</string>
+	<string name="contact_done">Done</string>
+
 </resources>

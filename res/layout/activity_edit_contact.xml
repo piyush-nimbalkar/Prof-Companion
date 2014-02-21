@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="15dp"
-        android:text="Name"
+        android:text="@string/contact_name"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editTextPosition"
         android:layout_alignLeft="@+id/textViewName"
-        android:text="Position"
+        android:text="@string/contact_position"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editTextEmail"
         android:layout_alignLeft="@+id/textViewPosition"
-        android:text="Email"
+        android:text="@string/contact_email"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -69,7 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editTextPhone"
         android:layout_alignLeft="@+id/textViewEmail"
-        android:text="Phone"
+        android:text="@string/contact_phone"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editTextOffice"
         android:layout_alignLeft="@+id/textViewPhone"
-        android:text="Office"
+        android:text="@string/contact_office"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -105,7 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editTextOfficeHours"
         android:layout_alignLeft="@+id/textViewOffice"
-        android:text="Office Hrs"
+        android:text="@string/contact_office_hours"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -123,7 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editTextCourse1"
         android:layout_alignLeft="@+id/textViewOfficeHours"
-        android:text="Course"
+        android:text="@string/contact_course"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -141,7 +141,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editTextCourseNo1"
         android:layout_alignLeft="@+id/textViewCourse1"
-        android:text="Course No"
+        android:text="@string/contact_course_no"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -159,7 +159,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editTextCourse2"
         android:layout_alignLeft="@+id/textViewCourseNo1"
-        android:text="Course"
+        android:text="@string/contact_course"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -177,7 +177,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/editTextCourseNo2"
         android:layout_alignLeft="@+id/textViewCourse2"
-        android:text="Course No"
+        android:text="@string/contact_course_no"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -196,6 +196,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
-        android:text="Done" />
+        android:text="@string/contact_done" />
 
 </RelativeLayout>
