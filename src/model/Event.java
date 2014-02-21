@@ -6,32 +6,32 @@ import android.os.Parcelable;
 public class Event implements Parcelable {
 
 	private String type;
-	private String name;
+	private String time;
 	private String day;
 	private String note;
 
-	public Event(String _type, String _name, String _day, String _note) {
+	public Event(String _type, String _time, String _day, String _note) {
 		type = _type;
-		name = _name;
+		time = _time;
 		day = _day;
 		note = _note;
 	}
 
 	public Event(Parcel in) {
 		type = in.readString();
-		name = in.readString();
+		time = in.readString();
 		day = in.readString();
 		note = in.readString();
 	}
 
-	public String getName() {
-		return name;
+	public String getTime() {
+		return time;
 	}
 
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeString(type);
-		dest.writeString(name);
+		dest.writeString(time);
 		dest.writeString(day);
 		dest.writeString(note);
 	}

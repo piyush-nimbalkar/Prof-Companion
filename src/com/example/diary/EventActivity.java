@@ -17,7 +17,7 @@ public class EventActivity extends Activity {
 
 		events = getIntent().getParcelableArrayListExtra("Events");
 
-		Toast.makeText(this, events.get(0).getName(), Toast.LENGTH_LONG).show();
+		Toast.makeText(this, events.get(0).getTime(), Toast.LENGTH_LONG).show();
 	}
 
 }
