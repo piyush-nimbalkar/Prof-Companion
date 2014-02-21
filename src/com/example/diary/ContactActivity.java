@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class ContactActivity extends Activity implements OnClickListener {
 
@@ -62,20 +61,29 @@ public class ContactActivity extends Activity implements OnClickListener {
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK){
-				Contact updatedContact = (Contact) data.getExtras().get("Contact");
-				textViewName.setText(updatedContact.getName());
-				textViewPosition.setText(updatedContact.getPosition());
-				textViewEmail.setText(updatedContact.getEmail());
-				textViewPhone.setText(updatedContact.getPhone());
-				textViewOffice.setText(updatedContact.getOffice());
-				textViewOfficeHours.setText(updatedContact.getOfficeHours());
-				textViewCourse1.setText(courseInformation(updatedContact, 0));
-				textViewCourse2.setText(courseInformation(updatedContact, 1));
+				contact = (Contact) data.getExtras().get("Contact");
+
+				textViewName.setText(contact.getName());
+				textViewPosition.setText(contact.getPosition());
+				textViewEmail.setText(contact.getEmail());
+				textViewPhone.setText(contact.getPhone());
+				textViewOffice.setText(contact.getOffice());
+				textViewOfficeHours.setText(contact.getOfficeHours());
+				textViewCourse1.setText(courseInformation(contact, 0));
+				textViewCourse2.setText(courseInformation(contact, 1));
 		}
 		super.onActivityResult(requestCode, resultCode, data);
 	}
-	
+
+	public void finish() {
+		Intent data = new Intent();
+		data.putExtra("Contact", contact);
+		setResult(RESULT_OK, data);
+		super.finish();
+	}
+
 	private String courseInformation(Contact _contact, int index) {
 		return _contact.getCurrentCourses().get(index).getName() + " (" + _contact.getCurrentCourses().get(index).getCRN() + ")";
 	}
+
 }

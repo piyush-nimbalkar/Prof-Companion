@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnClickListener {
 
+	private final int REQUEST_CODE1 = 1;
 	private Button contactButton;
 	private Context context;
 	private Contact contact;
@@ -49,7 +50,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.buttonContact:
 			Intent i = new Intent(context, ContactActivity.class);
 			i.putExtra("Contact", contact);
-			startActivity(i);
+			startActivityForResult(i, REQUEST_CODE1);
 			break;
 		case R.id.buttonCourses:
 			Toast.makeText(context, "Here are the courses I taught!", Toast.LENGTH_LONG).show();
@@ -61,6 +62,13 @@ public class MainActivity extends Activity implements OnClickListener {
 			Toast.makeText(context, "Here are my news!", Toast.LENGTH_LONG).show();
 			break;
 		}
+	}
+
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK)
+				contact = (Contact) data.getExtras().get("Contact");
+		Toast.makeText(this, contact.getName(), Toast.LENGTH_LONG).show();
+		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 }
