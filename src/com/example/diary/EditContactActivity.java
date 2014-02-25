@@ -35,7 +35,7 @@ public class EditContactActivity extends Activity implements OnClickListener {
 		editCourseNo1 = (EditText) findViewById(R.id.editTextCourseNo1);
 		editCourse2 = (EditText) findViewById(R.id.editTextCourse2);
 		editCourseNo2 = (EditText) findViewById(R.id.editTextCourseNo2);
-		doneEditing = (Button) findViewById(R.id.buttonDone);
+		doneEditing = (Button) findViewById(R.id.buttonContactEditDone);
 		
 		contact = (Contact) getIntent().getSerializableExtra("Contact");
 		
@@ -55,7 +55,7 @@ public class EditContactActivity extends Activity implements OnClickListener {
 
 	public void onClick(View v) {
 		switch(v.getId()) {
-		case R.id.buttonDone:
+		case R.id.buttonContactEditDone:
 			contact.setName(editName.getText().toString());
 			contact.setPosition(editPosition.getText().toString());
 			contact.setEmail(editEmail.getText().toString());

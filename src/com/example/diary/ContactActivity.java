@@ -26,14 +26,14 @@ public class ContactActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_contact);
 
 		buttonEditContact = (Button) findViewById(R.id.buttonEdit);
-		textViewName = (TextView) findViewById(R.id.TextViewName);
-		textViewPosition = (TextView) findViewById(R.id.TextViewPosition);
-		textViewEmail = (TextView) findViewById(R.id.TextViewEmail);
-		textViewPhone = (TextView) findViewById(R.id.TextViewPhone);
-		textViewOffice = (TextView) findViewById(R.id.TextViewOffice);
+		textViewName = (TextView) findViewById(R.id.textViewName);
+		textViewPosition = (TextView) findViewById(R.id.textViewPosition);
+		textViewEmail = (TextView) findViewById(R.id.textViewEmail);
+		textViewPhone = (TextView) findViewById(R.id.textViewPhone);
+		textViewOffice = (TextView) findViewById(R.id.textViewOffice);
 		textViewOfficeHours = (TextView) findViewById(R.id.textViewOfficeHours);
-		textViewCourse1 = (TextView) findViewById(R.id.textViewCourse1);
-		textViewCourse2 = (TextView) findViewById(R.id.textViewCourse2);
+		textViewCourse1 = (TextView) findViewById(R.id.labelEditContactCourse1);
+		textViewCourse2 = (TextView) findViewById(R.id.labelEditContactCourse2);
 
 		contact = (Contact) getIntent().getSerializableExtra("Contact");
 
