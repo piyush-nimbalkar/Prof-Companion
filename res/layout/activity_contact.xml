@@ -1,157 +1,333 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ContactActivity" >
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
 
-    <RelativeLayout
+    <TableLayout
+        android:id="@+id/TableLayoutContact"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        tools:context=".ContactActivity" >
 
-        <TextView
-            android:id="@+id/TextViewName"
+        <TableRow
+            android:id="@+id/tableRowContact1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/TextViewName"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/labelContactName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="NAME"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#00B4D6"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:text="Name"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_marginRight="10dp"
+            android:background="#00B4D6" />
 
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/TextViewPosition"
+        <TableRow
+            android:id="@+id/tableRowContact2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/TextViewPosition"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:text="Position"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </RelativeLayout>
+            android:layout_height="wrap_content" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+            <TextView
+                android:id="@+id/TextViewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Name"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
 
-        <TextView
-            android:id="@+id/TextViewEmail"
+        <TableRow
+            android:id="@+id/tableRowContact3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/TextViewEmail"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/labelContactPoistion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="POSITION"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#00B4D6"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:text="Email"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </RelativeLayout>
+            android:layout_marginRight="10dp"
+            android:background="#00B4D6" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/TextViewPhone"
+        <TableRow
+            android:id="@+id/tableRowContact4"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/TextViewPhone"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:text="Phone"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_height="wrap_content" >
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/TextViewPosition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Position"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/TextViewOffice"
+        <TableRow
+            android:id="@+id/tableRowContact5"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/TextViewOffice"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/labelContactEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="EMAIL"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#00B4D6"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:text="Office"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </RelativeLayout>
+            android:layout_marginRight="10dp"
+            android:background="#00B4D6" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/textViewOfficeHours"
+        <TableRow
+            android:id="@+id/tableRowContact6"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/textViewOfficeHours"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:text="Office Hour"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:layout_height="wrap_content" >
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/TextViewEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Email"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/textViewCourse1"
+        <TableRow
+            android:id="@+id/tableRowContact7"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/textViewCourse1"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/labelContactPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="PHONE"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#00B4D6"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:text="Course Name"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </RelativeLayout>
+            android:layout_marginRight="10dp"
+            android:background="#00B4D6" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/textViewCourse2"
+        <TableRow
+            android:id="@+id/tableRowContact8"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/textViewCourse2"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/TextViewPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Phone"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRowContact9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/labelContactOffice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="OFFICE"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#00B4D6"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:text="Course Name"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-    </RelativeLayout>
+            android:layout_marginRight="10dp"
+            android:background="#00B4D6" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        <TableRow
+            android:id="@+id/tableRowContact10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-	    <Button
-	        android:id="@+id/buttonEdit"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentLeft="true"
-	        android:layout_alignParentRight="true"
-	        android:layout_marginLeft="60dp"
-	        android:layout_marginRight="60dp"
-	        android:layout_marginTop="20dp"
-	        android:text="Edit" />
+            <TextView
+                android:id="@+id/TextViewOffice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Office"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
 
-    </RelativeLayout>
-    
-</LinearLayout>
+        <TableRow
+            android:id="@+id/tableRowContact11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/labelContactOfficeHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="OFFICE HOURS"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#00B4D6"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#00B4D6" />
+
+        <TableRow
+            android:id="@+id/tableRowContact12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textViewOfficeHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Office Hours"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRowContact13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/labelContactCourses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="COURSES"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#00B4D6"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#00B4D6" />
+
+        <TableRow
+            android:id="@+id/tableRowContact14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textViewCourse1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Course 1"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRowContact15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textViewCourse2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="Course 2"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/buttonEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginTop="20dp"
+                android:text="Edit" />
+        </RelativeLayout>
+    </TableLayout>
+
+</ScrollView>
