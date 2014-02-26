@@ -21,20 +21,22 @@
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:paddingTop="2dp"
-        android:paddingBottom="10dp"
         android:textColor="#888888"
         android:text="Days"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
     <TextView
         android:id="@+id/textViewRowKeyword"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:paddingTop="2dp"
-        android:paddingBottom="10dp"
-        android:textColor="#888888"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="10dp"
+        android:paddingLeft="3dp"
+        android:paddingRight="3dp"
+        android:textColor="#555555"
+        android:background="#00FFAA"
         android:text="Days"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
