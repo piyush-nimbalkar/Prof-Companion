@@ -15,7 +15,6 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
 import android.content.Context;
-import android.widget.Toast;
 
 public class DiaryXmlParser {
 
@@ -58,10 +57,10 @@ public class DiaryXmlParser {
 				readContact(parser);
 			if (parser.getName().equals("courses"))
 				courses.add(readCourse(parser));
-//			if (parser.getName().equals("events"))
-//				events.add(readEvent(parser));
-//			if (parser.getName().equals("news"))
-//				news.add(readNews(parser));
+			if (parser.getName().equals("events"))
+				events.add(readEvent(parser));
+			if (parser.getName().equals("news"))
+				news.add(readNews(parser));
 		}
 	}
 
