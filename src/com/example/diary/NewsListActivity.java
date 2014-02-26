@@ -6,6 +6,7 @@ import model.News;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,6 +34,13 @@ public class NewsListActivity extends Activity implements OnItemClickListener {
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 
+	}
+
+	public void finish() {
+		Intent data = new Intent();
+		data.putParcelableArrayListExtra("News", news);
+		setResult(RESULT_OK, data);
+		super.finish();
 	}
 
 }
