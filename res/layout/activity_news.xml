@@ -16,8 +16,8 @@
             android:layout_height="wrap_content" >
 
             <EditText
+                android:id="@+id/editTextNewsHeadline"
                 android:inputType="text"
-                android:id="@+id/labelEventEvent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -30,13 +30,13 @@
         </TableRow>
 
                 <TableRow
-            android:id="@+id/tableRowNews3"
+            android:id="@+id/tableRowNews2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <EditText
                 android:inputType="text"
-                android:id="@+id/labelEventDayTime"
+                android:id="@+id/editTextNewsHighlights"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -44,7 +44,7 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/news_highlights"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#00B4D6"
+                android:textColor="#000000"
                 android:textStyle="bold" />
         </TableRow>
         
@@ -56,13 +56,13 @@
             android:background="#00B4D6" />
 
         <TableRow
-            android:id="@+id/tableRowNews2"
+            android:id="@+id/tableRowNews3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 			
             <EditText
                 android:inputType="text"
-                android:id="@+id/textViewName"
+                android:id="@+id/editTextNewsHyperlink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -77,13 +77,13 @@
         </TableRow>
 
         <TableRow
-            android:id="@+id/tableRowNews3"
+            android:id="@+id/tableRowNews4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
             <EditText
                 android:inputType="text"
-                android:id="@+id/labelEventDayTime"
+                android:id="@+id/editTextNewsKeywords"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -91,7 +91,7 @@
                 android:layout_marginTop="10dp"
                 android:text="@string/news_keywords"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#00B4D6"
+                android:textColor="#000000"
                 android:textStyle="bold" />
         </TableRow>
 

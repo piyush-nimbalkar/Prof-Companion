@@ -20,7 +20,7 @@
             android:layout_marginBottom="5dp"
             android:textColor="#00B4D6"
             android:textStyle="bold"
-            android:text="COURSE NUMBER"
+            android:text="COURSE CODE"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
     </TableRow>
@@ -38,13 +38,13 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/valueCourseNo1"
+            android:id="@+id/textViewCourseNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="15dp"
             android:layout_marginBottom="10dp"
-            android:text="12345"
+            android:text="@string/course_code"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </TableRow>
@@ -81,13 +81,13 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/valueCourseTitle1"
+            android:id="@+id/textViewCourseName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="15dp"
             android:layout_marginBottom="10dp"
-            android:text="Mobile Computing"
+            android:text="@string/course_name"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </TableRow>
@@ -125,13 +125,13 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/valueCreditHours1"
+            android:id="@+id/textViewCourseCredits"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="15dp"
             android:layout_marginBottom="10dp"
-            android:text="3:00"
+            android:text="@string/course_credits"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </TableRow>
@@ -169,13 +169,13 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/valueDays1"
+            android:id="@+id/textViewCourseDays"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="15dp"
             android:layout_marginBottom="10dp"
-            android:text="TR"
+            android:text="@string/course_days"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </TableRow>
@@ -212,15 +212,31 @@
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/valueTime1"
+            android:id="@+id/textViewCourseTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="15dp"
             android:layout_marginBottom="10dp"
-            android:text="1:30-2:45pm"
+            android:text="@string/course_time"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </TableRow>
+    
+            <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/buttonEditCourse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/edit" />
+        </RelativeLayout>
 
 </TableLayout>
