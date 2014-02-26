@@ -35,7 +35,7 @@ public class NewsListActivity extends Activity implements OnItemClickListener {
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		News news_item = (News) parent.getItemAtPosition(position);
-		Intent i = new Intent(context, NewsActivity.class);
+		Intent i = new Intent(context, EditNewsActivity.class);
 		i.putExtra("NewsItem", news_item);
 		i.putExtra("Position", position);
 		startActivityForResult(i, REQUEST_CODE1);

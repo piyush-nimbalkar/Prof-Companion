@@ -5,14 +5,14 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-public class NewsActivity extends Activity {
+public class EditNewsActivity extends Activity {
 
 	private News news_item;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_news);
+		setContentView(R.layout.activity_edit_news);
 
 		news_item = getIntent().getParcelableExtra("NewsItem");
 
