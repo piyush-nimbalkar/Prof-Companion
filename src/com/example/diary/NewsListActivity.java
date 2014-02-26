@@ -47,6 +47,8 @@ public class NewsListActivity extends Activity implements OnItemClickListener {
 			int position = data.getIntExtra("Position", 0);
 			news.remove(position);
 			news.add(position, news_item);
+			final NewsArrayAdapter adapter = new NewsArrayAdapter(this, news);
+			listView.setAdapter(adapter);
 		}
 		super.onActivityResult(requestCode, resultCode, data);
 	}

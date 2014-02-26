@@ -5,96 +5,153 @@
     android:layout_height="fill_parent" >
 
     <TableLayout
-        android:id="@+id/TableLayoutNews"
-        android:layout_width="wrap_content"
+        android:id="@+id/TableLayoutEditNews"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".EditNewsActivity" >
+        tools:context=".EditCourseActivity" >
 
         <TableRow
-            android:id="@+id/tableRowNews1"
-            android:layout_width="wrap_content"
+            android:id="@+id/tableRowEditNews1"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
 
-            <EditText
-                android:id="@+id/editTextNewsHeadline"
-                android:inputType="text"
+            <TextView
+                android:id="@+id/labelNewsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/news_headline"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#000000"
-                android:textStyle="bold" />
-        </TableRow>
-
-		<TableRow
-            android:id="@+id/tableRowNews2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <EditText
-                android:inputType="text"
-                android:id="@+id/editTextNewsHighlights"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/news_highlights"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#000000"
+                android:text="TITLE"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#00B4D6"
                 android:textStyle="bold" />
         </TableRow>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="2dip"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:background="#00B4D6" />
 
         <TableRow
-            android:id="@+id/tableRowNews3"
-            android:layout_width="wrap_content"
+            android:id="@+id/tableRowEditNews2"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
 
             <EditText
-                android:inputType="text"
-                android:id="@+id/editTextNewsHyperlink"
-                android:layout_width="wrap_content"
+                android:id="@+id/editTextEditNewsTitle"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/news_hyperlink"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:autoLink="web"
-                android:textColor="#000000"
-                android:textStyle="normal"
-                android:singleLine="false"/>
+                android:inputType="text"
+                android:text="News Title"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
         <TableRow
-            android:id="@+id/tableRowNews4"
-            android:layout_width="wrap_content"
+            android:id="@+id/tableRowEditNews3"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
 
-            <EditText
-                android:inputType="text"
-                android:id="@+id/editTextNewsKeywords"
+            <TextView
+                android:id="@+id/labelKeyword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/news_keywords"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#000000"
+                android:text="KEYWORD"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#00B4D6"
                 android:textStyle="bold" />
         </TableRow>
 
-    </TableLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#00B4D6" />
+
+        <TableRow
+            android:id="@+id/tableRowEditNews4"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editTextEditNewsKeyword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:inputType="text"
+                android:text="Keyword"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+		<TableRow
+            android:id="@+id/tableRowEditNews5"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/labelNewsHighlights"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="HIGHLIGHTS"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#00B4D6"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#00B4D6" />
+
+        <TableRow
+            android:id="@+id/tableRowEditNews6"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <EditText
+                android:id="@+id/editTextEditNewsHighlights"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:inputType="text"
+                android:text="Highlights"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+		<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/buttonEditNewsDone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"
+                android:layout_marginTop="20dp"
+                android:text="Done" />
+        </RelativeLayout>
+
+	</TableLayout>
 
 </ScrollView>

@@ -33,6 +33,18 @@ public class News implements Parcelable {
 		return highlights;
 	}
 
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	public void setHighlights(String highlights) {
+		this.highlights = highlights;
+	}
+
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeString(title);
