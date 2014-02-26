@@ -7,12 +7,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.StringWriter;
 import java.util.ArrayList;
 
 import model.Contact;
 import model.Course;
-import model.CurrentCourse;
 import model.Event;
 import model.News;
 

@@ -46,7 +46,6 @@ public class EditCourseActivity extends Activity implements OnClickListener {
 	
 	@Override
 	public void onClick(View v) {
-		// TODO Auto-generated method stub
 		switch(v.getId()) {
 		case R.id.buttonEditCourseDone:
 			course.setCourseNumber(editTextCourseCode.getText().toString());
@@ -54,7 +53,6 @@ public class EditCourseActivity extends Activity implements OnClickListener {
 			course.setCreditHours(editTextCourseCredits.getText().toString());
 			course.setDays(editTextCourseDays.getText().toString());
 			course.setTime(editTextCourseTime.getText().toString());
-			
 			finish();
 			break;
 		}

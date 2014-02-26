@@ -3,17 +3,16 @@ package com.example.diary;
 import model.Event;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class EditEventActivity extends Activity implements OnClickListener{
+public class EditEventActivity extends Activity implements OnClickListener {
 
-	private final int REQUEST_CODE1 = 1;
 	final Context context = this;
-
 	private Event event;
 
 	private EditText editTextEventType;
@@ -42,10 +41,25 @@ public class EditEventActivity extends Activity implements OnClickListener{
 		
 		buttonEditEventDone.setOnClickListener(this);
 	}
-	
+
+	@Override
 	public void onClick(View v) {
-		
-		
+		switch(v.getId()) {
+		case R.id.buttonEditEventDone:
+			event.setNote(editTextEventNote.getText().toString());
+			event.setType(editTextEventType.getText().toString());
+			event.setDay(editTextEventDay.getText().toString());
+			event.setTime(editTextEventTime.getText().toString());
+			finish();
+			break;
+		}
+	}
+
+	public void finish() {
+		Intent data = new Intent();
+		data.putExtra("Event", event);
+		setResult(RESULT_OK, data);
+		super.finish();
 	}
 
 }

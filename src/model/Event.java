@@ -39,7 +39,23 @@ public class Event implements Parcelable {
 	public String getNote() {
 		return note;
 	}
-	
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public void setTime(String time) {
+		this.time= time;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeString(type);

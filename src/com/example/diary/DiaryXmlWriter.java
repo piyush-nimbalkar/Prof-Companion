@@ -3,7 +3,6 @@ package com.example.diary;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.xmlpull.v1.XmlSerializer;
 
