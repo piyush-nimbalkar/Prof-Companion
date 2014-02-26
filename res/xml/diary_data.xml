@@ -32,14 +32,15 @@
         creditHours="3.00" />
 
     <events
-        day="TR"
+        day="Thursday"
         note="Class Database"
         time="1:30-2:45pm"
         type="class" />
+
     <events
-        day="W"
+        day="Wednesday"
         note="TA Database"
-        time="1:30-2:45pm"
+        time="4:30-6:45pm"
         type="appointment" />
 
     <news

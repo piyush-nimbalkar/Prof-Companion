@@ -11,7 +11,6 @@ import android.widget.EditText;
 
 public class EditEventActivity extends Activity implements OnClickListener{
 
-	
 	private final int REQUEST_CODE1 = 1;
 	final Context context = this;
 

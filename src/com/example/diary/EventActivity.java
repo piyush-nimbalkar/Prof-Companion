@@ -38,7 +38,7 @@ public class EventActivity extends Activity implements OnClickListener{
 		eventPosition = getIntent().getIntExtra("Position", 0);
 
 		textViewEventType.setText(event.getType());
-		textViewEventDayTime.setText(event.getDay() + "; " + event.getTime());
+		textViewEventDayTime.setText(event.getDay() + ", " + event.getTime());
 		textViewEventNote.setText(event.getNote());
 		
 		buttonEditEvent.setOnClickListener(this);
@@ -58,13 +58,13 @@ public class EventActivity extends Activity implements OnClickListener{
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK){
 				event = (Event) data.getExtras().get("Event");
-
 				textViewEventType.setText(event.getType());
-				textViewEventDayTime.setText(event.getDay() + "; " + event.getTime());
+				textViewEventDayTime.setText(event.getDay() + ", " + event.getTime());
 				textViewEventNote.setText(event.getNote());
 		}
 		super.onActivityResult(requestCode, resultCode, data);
 	}
+
 	public void finish() {
 		Intent data = new Intent();
 		data.putExtra("Event", event);
@@ -72,4 +72,5 @@ public class EventActivity extends Activity implements OnClickListener{
 		setResult(RESULT_OK, data);
 		super.finish();
 	}
+
 }

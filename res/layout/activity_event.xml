@@ -11,6 +11,46 @@
         tools:context=".EventActivity" >
 
         <TableRow
+            android:id="@+id/tableRowEvent5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/labelEventNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/event_note_title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#00B4D6"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="2dip"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#00B4D6" />
+
+        <TableRow
+            android:id="@+id/tableRowEvent6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textViewEventNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <TableRow
             android:id="@+id/tableRowEvent1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
@@ -47,7 +87,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/event_type"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -88,48 +127,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="@string/event_day_time"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRowEvent5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/labelEventNote"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/event_note_title"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:textColor="#00B4D6"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="2dip"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="#00B4D6" />
-
-        <TableRow
-            android:id="@+id/tableRowEvent6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:id="@+id/textViewEventNote"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="10dp"
-                android:text="@string/event_note"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 

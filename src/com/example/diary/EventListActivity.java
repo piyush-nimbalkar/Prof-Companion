@@ -30,6 +30,7 @@ public class EventListActivity extends Activity implements OnItemClickListener {
 		listview.setAdapter(adapter);
 		listview.setOnItemClickListener(this);
 	}
+
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Event event = (Event) parent.getItemAtPosition(position);
@@ -45,12 +46,10 @@ public class EventListActivity extends Activity implements OnItemClickListener {
 			int position = data.getIntExtra("Position", 0);
 			events.remove(position);
 			events.add(position, event);
-			
 		}
-		final EventArrayAdaptor adapter_refresh = new EventArrayAdaptor(this, events);
-		listview.setAdapter(adapter_refresh);
+		final EventArrayAdaptor adapter = new EventArrayAdaptor(this, events);
+		listview.setAdapter(adapter);
 		listview.setOnItemClickListener(this);
-		
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
