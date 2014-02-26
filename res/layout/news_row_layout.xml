@@ -36,7 +36,7 @@
         android:paddingLeft="3dp"
         android:paddingRight="3dp"
         android:textColor="#555555"
-        android:background="#00FFAA"
+        android:background="#25E6A5"
         android:text="Days"
         android:textAppearance="?android:attr/textAppearanceSmall" />
 
