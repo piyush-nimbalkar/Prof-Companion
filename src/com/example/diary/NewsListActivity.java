@@ -15,6 +15,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class NewsListActivity extends Activity implements OnItemClickListener {
 
+	private final int REQUEST_CODE1 = 1;
 	private Context context;
 	private ListView listView;
 	private ArrayList<News> news = new ArrayList<News>();
@@ -32,8 +33,22 @@ public class NewsListActivity extends Activity implements OnItemClickListener {
 	}
 
 	@Override
-	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
+	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+		News news_item = (News) parent.getItemAtPosition(position);
+		Intent i = new Intent(context, NewsActivity.class);
+		i.putExtra("NewsItem", news_item);
+		i.putExtra("Position", position);
+		startActivityForResult(i, REQUEST_CODE1);
+	}
 
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK){
+			News news_item = (News) data.getExtras().get("NewsItem");
+			int position = data.getIntExtra("Position", 0);
+			news.remove(position);
+			news.add(position, news_item);
+		}
+		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 	public void finish() {

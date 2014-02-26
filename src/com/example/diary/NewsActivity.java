@@ -1,8 +1,5 @@
 package com.example.diary;
 
-import java.util.ArrayList;
-
-import model.Course;
 import model.News;
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,16 +7,16 @@ import android.widget.Toast;
 
 public class NewsActivity extends Activity {
 
-	private ArrayList<News> news = new ArrayList<News>();
+	private News news_item;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_news);
 
-		news = getIntent().getParcelableArrayListExtra("News");
+		news_item = getIntent().getParcelableExtra("NewsItem");
 
-		Toast.makeText(this, news.get(0).getTitle(), Toast.LENGTH_LONG).show();
+		Toast.makeText(this, news_item.getTitle(), Toast.LENGTH_LONG).show();
 	}
 
 }
