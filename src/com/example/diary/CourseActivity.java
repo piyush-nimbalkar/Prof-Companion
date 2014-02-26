@@ -1,6 +1,5 @@
 package com.example.diary;
 
-import model.Contact;
 import model.Course;
 import android.app.Activity;
 import android.content.Context;

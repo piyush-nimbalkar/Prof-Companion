@@ -34,8 +34,7 @@ public class EventActivity extends Activity implements OnClickListener{
 		textViewEventNote = (TextView) findViewById(R.id.textViewEventNote);
 		buttonEditEvent = (Button) findViewById(R.id.buttonEditEvent);
 		
-		event = getIntent().getParcelableExtra("Events");
-
+		event = getIntent().getParcelableExtra("Event");
 		eventPosition = getIntent().getIntExtra("Position", 0);
 
 		textViewEventType.setText(event.getType());
@@ -43,7 +42,6 @@ public class EventActivity extends Activity implements OnClickListener{
 		textViewEventNote.setText(event.getNote());
 		
 		buttonEditEvent.setOnClickListener(this);
-
 	}
 
 	@Override

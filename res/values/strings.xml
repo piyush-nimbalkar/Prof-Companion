@@ -20,6 +20,10 @@
 	<string name="done">Done</string>
 	<string name="event_title">Event</string>
 	<string name="event_type">Event Type</string>
+	<string name="event_day_title">Days</string>
+	<string name="event_day">Monday</string>
+	<string name="event_time_title">Time</string>
+	<string name="event_time">1:30 PM - 2:45 PM</string>
 	<string name="event_day_time_title">Date and Time</string>
 	<string name="event_day_time">Monday 23</string>
 	<string name="event_note_title">Note</string>

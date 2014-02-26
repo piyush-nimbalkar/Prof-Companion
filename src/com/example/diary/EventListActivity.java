@@ -2,7 +2,6 @@ package com.example.diary;
 
 import java.util.ArrayList;
 
-import model.Course;
 import model.Event;
 import android.app.Activity;
 import android.content.Context;
@@ -40,6 +39,26 @@ public class EventListActivity extends Activity implements OnItemClickListener {
 		startActivityForResult(i, REQUEST_CODE1);
 	}
 	
-	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK){
+			Event event = (Event) data.getExtras().get("Event");
+			int position = data.getIntExtra("Position", 0);
+			events.remove(position);
+			events.add(position, event);
+			
+		}
+		final EventArrayAdaptor adapter_refresh = new EventArrayAdaptor(this, events);
+		listview.setAdapter(adapter_refresh);
+		listview.setOnItemClickListener(this);
+		
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	public void finish() {
+		Intent data = new Intent();
+		data.putParcelableArrayListExtra("Courses", events);
+		setResult(RESULT_OK, data);
+		super.finish();
+	}
 
 }
