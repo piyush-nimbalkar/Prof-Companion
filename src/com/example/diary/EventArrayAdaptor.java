@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class EventArrayAdaptor extends ArrayAdapter<Event>{
+public class EventArrayAdaptor extends ArrayAdapter<Event> {
 
 	private final Context context;
 	private final List<Event> values;
@@ -28,8 +28,10 @@ public class EventArrayAdaptor extends ArrayAdapter<Event>{
 		View eventView = inflater.inflate(R.layout.event_row_layout, parent, false);
 		TextView textViewEventTitle = (TextView) eventView.findViewById(R.id.textViewRowEventTitle);
 		TextView textViewEventTime = (TextView) eventView.findViewById(R.id.textViewRowEventTime);
+		TextView textViewEventType = (TextView) eventView.findViewById(R.id.textViewRowEventType);
 		textViewEventTitle.setText(values.get(position).getNote());
 		textViewEventTime.setText(values.get(position).getDay() + ", " + values.get(position).getTime());
+		textViewEventType.setText(values.get(position).getType());
 		return eventView;
 	}
 
