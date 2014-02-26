@@ -35,8 +35,9 @@ public class DiaryXmlWriter {
 		xmlSerializer.setOutput(writer);
 
 		xmlSerializer.startDocument("UTF-8", true);
-		xmlSerializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
+//		xmlSerializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
 
+		xmlSerializer.startTag("", "items");
 		xmlSerializer.startTag("", "contact");
 		xmlSerializer.attribute("", "name", contact.getName());
 		xmlSerializer.attribute("", "email", contact.getName());
@@ -51,7 +52,9 @@ public class DiaryXmlWriter {
 			xmlSerializer.endTag("", "course");
 		}
 		xmlSerializer.endTag("", "contact");
+		xmlSerializer.endTag("", "items");
 		xmlSerializer.endDocument();
+
 		return writer.toString();
 	}
 

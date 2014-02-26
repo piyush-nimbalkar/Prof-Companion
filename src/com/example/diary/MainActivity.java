@@ -1,6 +1,12 @@
 package com.example.diary;
 
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.ArrayList;
 
@@ -10,6 +16,7 @@ import model.CurrentCourse;
 import model.Event;
 import model.News;
 
+import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlSerializer;
 
@@ -32,6 +39,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	private final int REQUEST_CODE_NEWS = 4;
 	private Button contactButton, coursesButton, eventsButton, newsButton;
 	private Context context;
+	private String FILENAME = "hello_file6";
+
 	private Contact contact;
 	private ArrayList<Course> courses = new ArrayList<Course>();
 	private ArrayList<Event> events = new ArrayList<Event>();
@@ -53,8 +62,44 @@ public class MainActivity extends Activity implements OnClickListener {
 		eventsButton.setOnClickListener(this);
 		newsButton.setOnClickListener(this);
 
-		XmlResourceParser parser = getResources().getXml(R.xml.diary_data);
 		DiaryXmlParser diaryParser = new DiaryXmlParser(this);
+		File file = getBaseContext().getFileStreamPath(FILENAME);
+		XmlPullParser parser = null;
+
+		if (!file.exists()) {
+			parser = getResources().getXml(R.xml.diary_data);
+		} else {
+			FileInputStream fis;
+			StringBuffer fileContent = new StringBuffer("");
+			byte[] buffer = new byte[1024];
+
+			try {
+				fis = openFileInput(FILENAME);
+				while (fis.read(buffer) != -1) {
+					fileContent.append(new String(buffer));
+				}
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			InputStream in = new ByteArrayInputStream(fileContent.toString().getBytes());
+
+			try {
+				parser = Xml.newPullParser();
+				parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
+				parser.setInput(in, null);
+			} catch (XmlPullParserException e) {
+				e.printStackTrace();
+			} finally {
+				try {
+					in.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
 
 		try {
 			diaryParser.parse(parser);
@@ -65,9 +110,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 
 		contact = diaryParser.getContact();
-		courses = diaryParser.getCourses();
-		events = diaryParser.getEvents();
-		news = diaryParser.getNews();
+//		courses = diaryParser.getCourses();
+//		events = diaryParser.getEvents();
+//		news = diaryParser.getNews();
 	}
 
 	@Override
@@ -112,13 +157,24 @@ public class MainActivity extends Activity implements OnClickListener {
 	public void finish() {
 		DiaryXmlWriter writer = new DiaryXmlWriter(contact, courses, events, news);
 		try {
-			Toast.makeText(context, writer.write(), Toast.LENGTH_LONG).show();
+			String string = writer.write();
+			FileOutputStream fos;
+			try {
+				fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+				fos.write(string.getBytes());
+				fos.close();
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
 		}
 		super.finish();
 	}

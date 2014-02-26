@@ -50,17 +50,18 @@ public class DiaryXmlParser {
 	}
 
 	private void readItems(XmlPullParser parser) throws XmlPullParserException, IOException {
+		parser.next();
 		while (parser.next() != XmlPullParser.END_DOCUMENT) {
 			if (parser.getEventType() != XmlPullParser.START_TAG)
 				continue;
 			if (parser.getName().equals("contact"))
 				readContact(parser);
-			if (parser.getName().equals("courses"))
-				courses.add(readCourse(parser));
-			if (parser.getName().equals("events"))
-				events.add(readEvent(parser));
-			if (parser.getName().equals("news"))
-				news.add(readNews(parser));
+//			if (parser.getName().equals("courses"))
+//				courses.add(readCourse(parser));
+//			if (parser.getName().equals("events"))
+//				events.add(readEvent(parser));
+//			if (parser.getName().equals("news"))
+//				news.add(readNews(parser));
 		}
 	}
 
