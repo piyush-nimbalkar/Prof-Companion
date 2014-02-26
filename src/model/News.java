@@ -25,6 +25,14 @@ public class News implements Parcelable {
 		return title;
 	}
 
+	public String getKeyword() {
+		return keyword;
+	}
+
+	public String getHighlights() {
+		return highlights;
+	}
+
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeString(title);

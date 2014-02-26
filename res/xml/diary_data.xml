@@ -47,4 +47,14 @@
         keyword="Sustainability"
         title="Talk: Self-sustainable Cyber-physical Systems Design" />
 
+    <news
+        highlights="Shashank Devan"
+        keyword="Decision Tree"
+        title="Presentation: Machine Learning" />
+
+    <news
+        highlights="Piyush Nimbalkar"
+        keyword="File System"
+        title="Talk: Snapshots in Ext4 File system" />
+
 </items>

@@ -46,6 +46,10 @@
             android:name="com.example.diary.NewsActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name="com.example.diary.NewsListActivity"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>

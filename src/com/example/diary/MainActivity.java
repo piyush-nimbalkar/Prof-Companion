@@ -86,7 +86,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			startActivityForResult(i, REQUEST_CODE_EVENT);
 			break;
 		case R.id.buttonNews:
-			i = new Intent(context, NewsActivity.class);
+			i = new Intent(context, NewsListActivity.class);
 			i.putParcelableArrayListExtra("News", news);
 			startActivityForResult(i, REQUEST_CODE_NEWS);
 			break;
