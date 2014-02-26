@@ -35,16 +35,15 @@ public class DiaryXmlWriter {
 		xmlSerializer.setOutput(writer);
 
 		xmlSerializer.startDocument("UTF-8", true);
-//		xmlSerializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
 
 		xmlSerializer.startTag("", "items");
 		xmlSerializer.startTag("", "contact");
 		xmlSerializer.attribute("", "name", contact.getName());
-		xmlSerializer.attribute("", "email", contact.getName());
-		xmlSerializer.attribute("", "office", contact.getName());
-		xmlSerializer.attribute("", "office_hour", contact.getName());
-		xmlSerializer.attribute("", "phone", contact.getName());
-		xmlSerializer.attribute("", "position", contact.getName());
+		xmlSerializer.attribute("", "email", contact.getEmail());
+		xmlSerializer.attribute("", "office", contact.getOffice());
+		xmlSerializer.attribute("", "office_hour", contact.getOfficeHours());
+		xmlSerializer.attribute("", "phone", contact.getPhone());
+		xmlSerializer.attribute("", "position", contact.getPosition());
 		for (CurrentCourse cc: contact.getCurrentCourses()) {
 			xmlSerializer.startTag("", "course");
 			xmlSerializer.attribute("", "name", cc.getName());
