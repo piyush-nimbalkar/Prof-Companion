@@ -16,7 +16,7 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/labelEventEvent"
+                android:id="@+id/labelContactName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
