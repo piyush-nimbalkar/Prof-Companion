@@ -14,6 +14,7 @@ public class EditEventActivity extends Activity implements OnClickListener {
 
 	final Context context = this;
 	private Event event;
+	private int eventPosition;
 
 	private EditText editTextEventType;
 	private EditText editTextEventDay;
@@ -33,6 +34,7 @@ public class EditEventActivity extends Activity implements OnClickListener {
 		buttonEditEventDone = (Button) findViewById(R.id.buttonEditEventDone);
 		
 		event = getIntent().getParcelableExtra("Event");
+		eventPosition = getIntent().getIntExtra("Position", 0);
 
 		editTextEventType.setText(event.getType());
 		editTextEventDay.setText(event.getDay());
@@ -58,6 +60,7 @@ public class EditEventActivity extends Activity implements OnClickListener {
 	public void finish() {
 		Intent data = new Intent();
 		data.putExtra("Event", event);
+		data.putExtra("Position", eventPosition);
 		setResult(RESULT_OK, data);
 		super.finish();
 	}

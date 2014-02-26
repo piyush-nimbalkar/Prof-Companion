@@ -34,7 +34,7 @@ public class EventListActivity extends Activity implements OnItemClickListener {
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		Event event = (Event) parent.getItemAtPosition(position);
-		Intent i = new Intent(context, EventActivity.class);
+		Intent i = new Intent(context, EditEventActivity.class);
 		i.putExtra("Event", event);
 		i.putExtra("Position", position);
 		startActivityForResult(i, REQUEST_CODE1);
@@ -46,16 +46,15 @@ public class EventListActivity extends Activity implements OnItemClickListener {
 			int position = data.getIntExtra("Position", 0);
 			events.remove(position);
 			events.add(position, event);
+			final EventArrayAdaptor adapter = new EventArrayAdaptor(this, events);
+			listview.setAdapter(adapter);
 		}
-		final EventArrayAdaptor adapter = new EventArrayAdaptor(this, events);
-		listview.setAdapter(adapter);
-		listview.setOnItemClickListener(this);
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
 	public void finish() {
 		Intent data = new Intent();
-		data.putParcelableArrayListExtra("Courses", events);
+		data.putParcelableArrayListExtra("Events", events);
 		setResult(RESULT_OK, data);
 		super.finish();
 	}

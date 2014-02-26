@@ -118,6 +118,8 @@ public class MainActivity extends Activity implements OnClickListener {
 			contact = (Contact) data.getExtras().get("Contact");
 		else if (requestCode == REQUEST_CODE_COURSE && resultCode == RESULT_OK)
 			courses = data.getParcelableArrayListExtra("Courses");
+		else if (requestCode == REQUEST_CODE_EVENT && resultCode == RESULT_OK)
+			events = data.getParcelableArrayListExtra("Events");
 		else if (requestCode == REQUEST_CODE_NEWS && resultCode == RESULT_OK)
 			news = data.getParcelableArrayListExtra("News");
 		super.onActivityResult(requestCode, resultCode, data);
