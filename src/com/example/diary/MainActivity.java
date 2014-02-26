@@ -21,8 +21,10 @@ import android.widget.Button;
 
 public class MainActivity extends Activity implements OnClickListener {
 
-	private final int REQUEST_CODE1 = 1;
-	private final int REQUEST_CODE2 = 2;
+	private final int REQUEST_CODE_CONTACT = 1;
+	private final int REQUEST_CODE_COURSE = 2;
+	private final int REQUEST_CODE_EVENT = 3;
+	private final int REQUEST_CODE_NEWS = 4;
 	private Button contactButton, coursesButton, eventsButton, newsButton;
 	private Context context;
 	private Contact contact;
@@ -71,30 +73,30 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.buttonContact:
 			i = new Intent(context, ContactActivity.class);
 			i.putExtra("Contact", contact);
-			startActivityForResult(i, REQUEST_CODE1);
+			startActivityForResult(i, REQUEST_CODE_CONTACT);
 			break;
 		case R.id.buttonCourses:
 			i = new Intent(context, CourseListActivity.class);
 			i.putParcelableArrayListExtra("Courses", courses);
-			startActivityForResult(i, REQUEST_CODE2);
+			startActivityForResult(i, REQUEST_CODE_COURSE);
 			break;
 		case R.id.buttonEvents:
 			i = new Intent(context, EventActivity.class);
 			i.putParcelableArrayListExtra("Events", events);
-			startActivityForResult(i, REQUEST_CODE1);
+			startActivityForResult(i, REQUEST_CODE_EVENT);
 			break;
 		case R.id.buttonNews:
 			i = new Intent(context, NewsActivity.class);
 			i.putParcelableArrayListExtra("News", news);
-			startActivityForResult(i, REQUEST_CODE1);
+			startActivityForResult(i, REQUEST_CODE_NEWS);
 			break;
 		}
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK)
+		if (requestCode == REQUEST_CODE_CONTACT && resultCode == RESULT_OK)
 			contact = (Contact) data.getExtras().get("Contact");
-		else if (requestCode == REQUEST_CODE2 && resultCode == RESULT_OK)
+		else if (requestCode == REQUEST_CODE_COURSE && resultCode == RESULT_OK)
 			courses = data.getParcelableArrayListExtra("Courses");
 		super.onActivityResult(requestCode, resultCode, data);
 	}
