@@ -14,4 +14,16 @@
         android:text="Course Title"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <TextView
+        android:id="@+id/textViewRowDays"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="10dp"
+        android:textColor="#888888"
+        android:text="Days"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
 </LinearLayout>

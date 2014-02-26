@@ -18,8 +18,15 @@
     </contact>
 
     <courses
+        CN="13545"
+        Days="Friday, Monday"
+        Time="1:30-2:45pm"
+        courseTitle="Mobile Computing"
+        creditHours="3.00" />
+
+    <courses
         CN="16746"
-        Days="TR"
+        Days="Tuesday, Thursday"
         Time="1:30-2:45pm"
         courseTitle="Database Concept"
         creditHours="3.00" />

@@ -25,8 +25,10 @@ public class CourseArrayAdaptor extends ArrayAdapter<Course>{
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		View rowView = inflater.inflate(R.layout.course_row_layout, parent, false);
-		TextView textView = (TextView) rowView.findViewById(R.id.textViewRowCourseTitle);
-		textView.setText(values.get(position).getCourseNumber());
+		TextView textViewTitle = (TextView) rowView.findViewById(R.id.textViewRowCourseTitle);
+		TextView textViewDays = (TextView) rowView.findViewById(R.id.textViewRowDays);
+		textViewTitle.setText(values.get(position).getCourseNumber() + ": " + values.get(position).getCourseTitle());
+		textViewDays.setText(values.get(position).getDays());
 		return rowView;
 	}
 

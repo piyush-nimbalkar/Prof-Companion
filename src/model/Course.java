@@ -31,6 +31,22 @@ public class Course implements Parcelable {
 		return courseNumber;
 	}
 
+	public String getCourseTitle() {
+		return courseTitle;
+	}
+
+	public String getCreditHours() {
+		return creditHours;
+	}
+
+	public String getDays() {
+		return days;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeString(courseNumber);
