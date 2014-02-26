@@ -16,7 +16,7 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/labelContactName"
+                android:id="@+id/labelEventEvent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/labelContactEmail"
+                android:id="@+id/labelEventNote"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
@@ -123,7 +123,7 @@
             android:layout_height="wrap_content" >
 
             <TextView
-                android:id="@+id/textViewEmail"
+                android:id="@+id/textViewEventNote"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"

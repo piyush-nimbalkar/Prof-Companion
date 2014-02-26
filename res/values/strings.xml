@@ -17,5 +17,15 @@
 	<string name="contact_course_no">Course No</string>
 	<string name="contact_done">Done</string>
 	<string name="edit">Edit</string>
+	<string name="event_title">Event</string>
+	<string name="event_type">Event Type</string>
+	<string name="event_day_time_title">Date and Time</string>
+	<string name="event_day_time">Monday 23</string>
+	<string name="event_note_title">Note</string>
+	<string name="event_note">This is a note. Machine Learning in Vision and Brain Analytics Machine Learning in Vision and Brain Analytics</string>
+	<string name="news_headline">Machine Learning in Vision and Brain Analytics Machine Learning in Vision and Brain Analytics</string>
+	<string name="news_hyperlink">http://stackoverflow.com/questions/18222433/how-to-make-links-in-textview-clickable-in-android</string>
+	<string name="news_keywords">Machine Learning</string>
+	<string name="news_highlights">Tim Oates</string>
 
 </resources>

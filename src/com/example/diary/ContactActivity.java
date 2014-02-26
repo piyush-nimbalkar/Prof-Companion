@@ -28,7 +28,7 @@ public class ContactActivity extends Activity implements OnClickListener {
 		buttonEditContact = (Button) findViewById(R.id.buttonEdit);
 		textViewName = (TextView) findViewById(R.id.textViewName);
 		textViewPosition = (TextView) findViewById(R.id.textViewPosition);
-		textViewEmail = (TextView) findViewById(R.id.textViewEmail);
+		textViewEmail = (TextView) findViewById(R.id.textViewEventNote);
 		textViewPhone = (TextView) findViewById(R.id.textViewPhone);
 		textViewOffice = (TextView) findViewById(R.id.textViewOffice);
 		textViewOfficeHours = (TextView) findViewById(R.id.textViewOfficeHours);
