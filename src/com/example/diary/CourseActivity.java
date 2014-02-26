@@ -22,6 +22,7 @@ public class CourseActivity extends Activity implements android.view.View.OnClic
 	final Context context = this;
 	
 	private Course course;
+	private int coursePosition;
 	
 	private TextView textViewCourseCode;
 	private TextView textViewCourseName;
@@ -44,6 +45,7 @@ public class CourseActivity extends Activity implements android.view.View.OnClic
 		buttonEditCourse = (Button) findViewById(R.id.buttonEditCourse);
  		
 		course = getIntent().getParcelableExtra("Course");
+		coursePosition = getIntent().getIntExtra("Position", 1);
 
 		//Toast.makeText(this, course.getCourseNumber(), Toast.LENGTH_LONG).show();
 		textViewCourseCode.setText(course.getCourseNumber());
@@ -67,5 +69,11 @@ public class CourseActivity extends Activity implements android.view.View.OnClic
 		}
 	}
 
+	public void finish() {
+		Intent data = new Intent();
+		data.putExtra("Course", course);
+		data.putExtra("Position", coursePosition);
+		setResult(RESULT_OK, data);
+		super.finish();
 
 }
