@@ -22,6 +22,7 @@ import android.widget.Button;
 public class MainActivity extends Activity implements OnClickListener {
 
 	private final int REQUEST_CODE1 = 1;
+	private final int REQUEST_CODE2 = 2;
 	private Button contactButton, coursesButton, eventsButton, newsButton;
 	private Context context;
 	private Contact contact;
@@ -58,7 +59,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		contact = diaryParser.getContact();
 		courses = diaryParser.getCourses();
-		events= diaryParser.getEvents();
+		events = diaryParser.getEvents();
 		news = diaryParser.getNews();
 	}
 
@@ -75,7 +76,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		case R.id.buttonCourses:
 			i = new Intent(context, CourseListActivity.class);
 			i.putParcelableArrayListExtra("Courses", courses);
-			startActivityForResult(i, REQUEST_CODE1);
+			startActivityForResult(i, REQUEST_CODE2);
 			break;
 		case R.id.buttonEvents:
 			i = new Intent(context, EventActivity.class);
@@ -92,8 +93,9 @@ public class MainActivity extends Activity implements OnClickListener {
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK)
-				contact = (Contact) data.getExtras().get("Contact");
-
+			contact = (Contact) data.getExtras().get("Contact");
+		else if (requestCode == REQUEST_CODE2 && resultCode == RESULT_OK)
+			courses = data.getParcelableArrayListExtra("Courses");
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 

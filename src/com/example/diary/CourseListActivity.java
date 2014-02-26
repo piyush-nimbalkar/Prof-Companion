@@ -53,7 +53,7 @@ public class CourseListActivity extends Activity implements OnItemClickListener 
 
 	public void finish() {
 		Intent data = new Intent();
-		data.putExtra("Courses", courses);
+		data.putParcelableArrayListExtra("Courses", courses);
 		setResult(RESULT_OK, data);
 		super.finish();
 	}
