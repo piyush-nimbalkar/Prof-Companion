@@ -47,7 +47,12 @@ public class CourseListActivity extends Activity implements OnItemClickListener 
 			int position = data.getIntExtra("Position", 0);
 			courses.remove(position);
 			courses.add(position, course);
+			
 		}
+		final CourseArrayAdaptor adapter_refresh = new CourseArrayAdaptor(this, courses);
+		listview.setAdapter(adapter_refresh);
+		listview.setOnItemClickListener(this);
+		
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 

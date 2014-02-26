@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/TableLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+    
+<TableLayout 
+    android:id="@+id/TableLayoutEditCourse"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".EditCourseActivity" >
 
     <TableRow
-        android:id="@+id/tableRow1"
+        android:id="@+id/tableRow1EditCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/labelCourseNo1"
+            android:id="@+id/labelCourseNo1EditCourse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -33,7 +37,7 @@
 		android:background="#00B4D6" />
 
     <TableRow
-        android:id="@+id/tableRow2"
+        android:id="@+id/tableRow2EditCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
@@ -51,7 +55,7 @@
     </TableRow>
 
     <TableRow
-        android:id="@+id/tableRow3"
+        android:id="@+id/tableRow3EditCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
@@ -77,7 +81,7 @@
 		android:background="#00B4D6" />
 
     <TableRow
-        android:id="@+id/tableRow4"
+        android:id="@+id/tableRow4EditCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
@@ -96,12 +100,12 @@
 
 
     <TableRow
-        android:id="@+id/tableRow5"
+        android:id="@+id/tableRow5EditCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/labelCreditHours1"
+            android:id="@+id/labelCreditHours1EditCourse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -122,7 +126,7 @@
 		android:background="#00B4D6" />
 
     <TableRow
-        android:id="@+id/tableRow6"
+        android:id="@+id/tableRow6EditCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
@@ -141,12 +145,12 @@
 
 
     <TableRow
-        android:id="@+id/tableRow7"
+        android:id="@+id/tableRow7EditCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/labelDays1"
+            android:id="@+id/labelDays1EditCourse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -167,7 +171,7 @@
 		android:background="#00B4D6" />
 
     <TableRow
-        android:id="@+id/tableRow8"
+        android:id="@+id/tableRow8EditCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
@@ -185,12 +189,12 @@
     </TableRow>
 
     <TableRow
-        android:id="@+id/tableRow9"
+        android:id="@+id/tableRow9EditCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
         <TextView
-            android:id="@+id/labelTime1"
+            android:id="@+id/labelTime1EditCourse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -211,7 +215,7 @@
 		android:background="#00B4D6" />
 
     <TableRow
-        android:id="@+id/tableRow10"
+        android:id="@+id/tableRow10EditCourse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
@@ -241,7 +245,8 @@
                 android:layout_marginLeft="70dp"
                 android:layout_marginRight="70dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/edit" />
+                android:text="@string/done" />
         </RelativeLayout>
 
 </TableLayout>
+</ScrollView>
