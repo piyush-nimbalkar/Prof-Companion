@@ -24,10 +24,22 @@ public class Event implements Parcelable {
 		note = in.readString();
 	}
 
+	public String getType() {
+		return type;
+	}
+	
 	public String getTime() {
 		return time;
 	}
-
+	
+	public String getDay() {
+		return day;
+	}
+	
+	public String getNote() {
+		return note;
+	}
+	
 	@Override
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeString(type);
