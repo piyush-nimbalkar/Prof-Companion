@@ -15,6 +15,7 @@ import android.widget.ListView;
 
 public class CourseListActivity extends Activity implements OnItemClickListener {
 
+	private final int REQUEST_CODE1 = 1;
 	private Context context;
 	private ArrayList<Course> courses = new ArrayList<Course>();
 	private ListView listview;
@@ -36,7 +37,25 @@ public class CourseListActivity extends Activity implements OnItemClickListener 
 		Course course = (Course) parent.getItemAtPosition(position);
 		Intent i = new Intent(context, CourseActivity.class);
 		i.putExtra("Course", course);
-		startActivity(i);
+		i.putExtra("Position", position);
+		startActivityForResult(i, REQUEST_CODE1);
+	}
+
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK){
+			Course course = (Course) data.getExtras().get("Course");
+			int position = data.getIntExtra("Position", 0);
+			courses.remove(position);
+			courses.add(position, course);
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	public void finish() {
+		Intent data = new Intent();
+		data.putExtra("Courses", courses);
+		setResult(RESULT_OK, data);
+		super.finish();
 	}
 
 }
