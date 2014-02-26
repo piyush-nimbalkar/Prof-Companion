@@ -1,23 +1,28 @@
 package com.example.diary;
 
 import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
 
 import model.Contact;
 import model.Course;
+import model.CurrentCourse;
 import model.Event;
 import model.News;
 
 import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlSerializer;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.XmlResourceParser;
+import android.util.Xml;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends Activity implements OnClickListener {
 
@@ -63,6 +68,16 @@ public class MainActivity extends Activity implements OnClickListener {
 		courses = diaryParser.getCourses();
 		events = diaryParser.getEvents();
 		news = diaryParser.getNews();
+
+		try {
+			Toast.makeText(context, CreateXMLString(contact), Toast.LENGTH_LONG).show();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalStateException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -103,4 +118,29 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
+	private static String CreateXMLString(Contact contact) throws IllegalArgumentException, IllegalStateException, IOException {
+		XmlSerializer xmlSerializer = Xml.newSerializer();
+		StringWriter writer = new StringWriter();
+		xmlSerializer.setOutput(writer);
+
+		xmlSerializer.startDocument("UTF-8", true);
+		xmlSerializer.setFeature("http://xmlpull.org/v1/doc/features.html#indent-output", true);
+
+		xmlSerializer.startTag("", "contact");
+		xmlSerializer.attribute("", "name", contact.getName());
+		xmlSerializer.attribute("", "email", contact.getName());
+		xmlSerializer.attribute("", "office", contact.getName());
+		xmlSerializer.attribute("", "office_hour", contact.getName());
+		xmlSerializer.attribute("", "phone", contact.getName());
+		xmlSerializer.attribute("", "position", contact.getName());
+		for (CurrentCourse cc: contact.getCurrentCourses()) {
+			xmlSerializer.startTag("", "course");
+			xmlSerializer.attribute("", "name", cc.getName());
+			xmlSerializer.attribute("", "CRN", cc.getCRN());
+			xmlSerializer.endTag("", "course");
+		}
+		xmlSerializer.endTag("", "contact");
+		xmlSerializer.endDocument();
+		return writer.toString();
+	}
 }
