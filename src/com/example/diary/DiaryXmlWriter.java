@@ -51,6 +51,17 @@ public class DiaryXmlWriter {
 			xmlSerializer.endTag("", "course");
 		}
 		xmlSerializer.endTag("", "contact");
+
+		for (Course course: courses) {
+			xmlSerializer.startTag("", "courses");
+			xmlSerializer.attribute("", "CN", course.getCourseNumber());
+			xmlSerializer.attribute("", "Days", course.getDays());
+			xmlSerializer.attribute("", "Time", course.getTime());
+			xmlSerializer.attribute("", "courseTitle", course.getCourseTitle());
+			xmlSerializer.attribute("", "creditHours", course.getCreditHours());
+			xmlSerializer.endTag("", "courses");
+		}
+
 		xmlSerializer.endTag("", "items");
 		xmlSerializer.endDocument();
 

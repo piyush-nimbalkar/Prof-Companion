@@ -63,13 +63,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		newsButton.setOnClickListener(this);
 
 		DiaryXmlParser diaryParser = new DiaryXmlParser(this);
-		File file = getBaseContext().getFileStreamPath(storedXmlFile);
-		XmlPullParser parser = null;
-
-		if (!file.exists())
-			parser = getResources().getXml(R.xml.diary_data);
-		else
-			parser = getParserForStoredFile();
+		XmlPullParser parser = getXmlParser();
 
 		try {
 			diaryParser.parse(parser);
@@ -80,10 +74,22 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 
 		contact = diaryParser.getContact();
-//		courses = diaryParser.getCourses();
+		courses = diaryParser.getCourses();
 //		events = diaryParser.getEvents();
 //		news = diaryParser.getNews();
 	}
+
+	private XmlPullParser getXmlParser() {
+		File file = getBaseContext().getFileStreamPath(storedXmlFile);
+		XmlPullParser parser = null;
+
+		if (!file.exists())
+			parser = getResources().getXml(R.xml.diary_data);
+		else
+			parser = getParserForStoredFile();
+		return parser;
+	}
+
 	@Override
 	public void onClick(View v) {
 		Intent i;
