@@ -1,5 +1,6 @@
 package com.example.diary;
 
+import model.Contact;
 import model.Course;
 import android.app.Activity;
 import android.content.Context;
@@ -54,13 +55,25 @@ public class CourseActivity extends Activity implements OnClickListener {
 	public void onClick(View v) {
 		switch(v.getId()) {
 		case R.id.buttonEditCourse:
-			Intent i = new Intent(context, EditContactActivity.class);
+			Intent i = new Intent(context, EditCourseActivity.class);
 			i.putExtra("Course", course);
 			startActivityForResult(i, REQUEST_CODE1);
 			break;
 		}
 	}
 
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK){
+				course = (Course) data.getExtras().get("Course");
+
+				textViewCourseCode.setText(course.getCourseNumber());
+				textViewCourseName.setText(course.getCourseTitle());
+				textViewCourseCredits.setText(course.getCreditHours());
+				textViewCourseDays.setText(course.getDays());
+				textViewCourseTime.setText(course.getCreditHours());
+		}
+		super.onActivityResult(requestCode, resultCode, data);
+	}
 	public void finish() {
 		Intent data = new Intent();
 		data.putExtra("Course", course);

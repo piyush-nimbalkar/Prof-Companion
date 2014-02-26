@@ -37,8 +37,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/textViewCourseNumber"
+        <EditText
+            android:id="@+id/editTextEditCourseNumber"
+            android:inputType="number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -80,8 +81,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/textViewCourseName"
+        <EditText
+            android:id="@+id/editTextEditCourseName"
+            android:inputType="text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -124,8 +126,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/textViewCourseCredits"
+        <EditText
+            android:id="@+id/editTextEditCourseCredits"
+            android:inputType="numberDecimal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -168,8 +171,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/textViewCourseDays"
+        <EditText
+            android:id="@+id/editTextEditCourseDays"
+            android:inputType="text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -211,8 +215,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/textViewCourseTime"
+        <EditText
+            android:id="@+id/editTextEditCourseTime"
+            android:inputType="text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -228,7 +233,7 @@
             android:layout_height="wrap_content" >
 
             <Button
-                android:id="@+id/buttonEditCourse"
+                android:id="@+id/buttonEditCourseDone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
