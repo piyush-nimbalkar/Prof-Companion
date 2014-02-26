@@ -73,7 +73,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			startActivityForResult(i, REQUEST_CODE1);
 			break;
 		case R.id.buttonCourses:
-			i = new Intent(context, CourseActivity.class);
+			i = new Intent(context, CourseListActivity.class);
 			i.putParcelableArrayListExtra("Courses", courses);
 			startActivityForResult(i, REQUEST_CODE1);
 			break;
