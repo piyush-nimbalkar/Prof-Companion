@@ -22,10 +22,9 @@
 	<string name="event_time_title">TIME</string>
 	<string name="event_day_time_title">DAY AND TIME</string>
 	<string name="event_note_title">NOTE</string>
-	<string name="news_headline">Machine Learning in Vision and Brain Analytics Machine Learning in Vision and Brain Analytics</string>
-	<string name="news_hyperlink">http://stackoverflow.com/questions/18222433/how-to-make-links-in-textview-clickable-in-android</string>
-	<string name="news_keywords">Machine Learning</string>
-	<string name="news_highlights">Tim Oates</string>
+	<string name="news_title">TITLE</string>
+	<string name="news_keywords">KEYWORD</string>
+	<string name="news_highlights">HIGHLIGHTS</string>
 	<string name="course_code">COURSE CODE</string>
 	<string name="course_title">COURSE TITLE</string>
 	<string name="course_credit_hours">CREDIT HOURS</string>
