@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class EditEventActivity extends Activity implements OnClickListener {
+public class EditEventActivity extends Activity {
 
 	private final int RESULT_DELETED = 3;
 	final Context context = this;
@@ -25,8 +25,6 @@ public class EditEventActivity extends Activity implements OnClickListener {
 	private EditText editTextEventTime;
 	private EditText editTextEventNote;
 
-	private Button buttonEditEventDone;
-
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_event);
@@ -35,7 +33,6 @@ public class EditEventActivity extends Activity implements OnClickListener {
 		editTextEventDay = (EditText) findViewById(R.id.editTextEditEventDay);
 		editTextEventTime = (EditText) findViewById(R.id.editTextEditEventTime);
 		editTextEventNote = (EditText) findViewById(R.id.editTextEditEventNote);
-		buttonEditEventDone = (Button) findViewById(R.id.buttonEditEventDone);
 		
 		eventPosition = getIntent().getIntExtra("Position", -1);
 		if (eventPosition == -1)
@@ -47,21 +44,6 @@ public class EditEventActivity extends Activity implements OnClickListener {
 		editTextEventDay.setText(event.getDay());
 		editTextEventTime.setText(event.getTime());
 		editTextEventNote.setText(event.getNote());
-		
-		buttonEditEventDone.setOnClickListener(this);
-	}
-
-	@Override
-	public void onClick(View v) {
-		switch(v.getId()) {
-		case R.id.buttonEditEventDone:
-			event.setNote(editTextEventNote.getText().toString());
-			event.setType(editTextEventType.getText().toString());
-			event.setDay(editTextEventDay.getText().toString());
-			event.setTime(editTextEventTime.getText().toString());
-			finish();
-			break;
-		}
 	}
 
 	public void finish() {
