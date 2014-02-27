@@ -2,33 +2,38 @@
 <resources>
 
     <string name="app_name">Diary</string>
+
+    <string name="contact">Contact</string>
     <string name="courses_taught">Courses Taught</string>
     <string name="events">Events</string>
     <string name="news">News</string>
-    <string name="contact">Contact</string>
-	<string name="contact_name">Name</string>
-	<string name="contact_position">Position</string>
-	<string name="contact_email">Email</string>
-	<string name="contact_phone">Phone</string>
-	<string name="contact_office">Office</string>
-	<string name="contact_office_hours">Office Hrs</string>
-	<string name="contact_course">Course</string>
-	<string name="contact_course_no">Course No</string>
-	<string name="contact_done">Done</string>
-	<string name="done">Done</string>
+
+	<string name="contact_name">NAME</string>
+	<string name="contact_position">POSITION</string>
+	<string name="contact_email">EMAIL</string>
+	<string name="contact_phone">PHONE</string>
+	<string name="contact_office">OFFICE</string>
+	<string name="contact_office_hours">OFFICE HOURS</string>
+	<string name="contact_course">COURSE</string>
+	<string name="contact_courses">COURSES</string>
+	<string name="contact_course_no">COURSE NUMBER</string>
+
 	<string name="event_title">EVENT TYPE</string>
 	<string name="event_day_title">DAY</string>
 	<string name="event_time_title">TIME</string>
 	<string name="event_day_time_title">DAY AND TIME</string>
 	<string name="event_note_title">NOTE</string>
+
 	<string name="news_title">TITLE</string>
 	<string name="news_keywords">KEYWORD</string>
 	<string name="news_highlights">HIGHLIGHTS</string>
+
 	<string name="course_code">COURSE CODE</string>
 	<string name="course_title">COURSE TITLE</string>
 	<string name="course_credit_hours">CREDIT HOURS</string>
 	<string name="course_days">DAYS</string>
 	<string name="course_time">TIME</string>
+
 	<string name="add">Add</string>
 	<string name="edit">Edit</string>
 	<string name="save">Save</string>

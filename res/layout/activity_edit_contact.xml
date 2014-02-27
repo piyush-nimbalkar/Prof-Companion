@@ -22,7 +22,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="NAME"
+                android:text="@string/contact_name"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -48,7 +48,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:inputType="text"
-                android:text="Name"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -64,7 +63,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="POSITION"
+                android:text="@string/contact_position"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -90,7 +89,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:inputType="text"
-                android:text="Position"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -106,7 +104,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="EMAIL"
+                android:text="@string/contact_email"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -131,8 +129,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:inputType="text"
-                android:text="Email"
+                android:inputType="textEmailAddress"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -148,7 +145,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="PHONE"
+                android:text="@string/contact_phone"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -174,7 +171,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:inputType="phone"
-                android:text="Phone"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -190,7 +186,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="OFFICE"
+                android:text="@string/contact_office"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -216,7 +212,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:inputType="text"
-                android:text="Office"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -232,7 +227,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="OFFICE HOURS"
+                android:text="@string/contact_office_hours"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -258,7 +253,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:inputType="text"
-                android:text="Office Hours"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -274,7 +268,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="COURSE"
+                android:text="@string/contact_course"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -300,7 +294,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:inputType="text"
-                android:text="Course 1"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -316,7 +309,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="COURSE NUMBER"
+                android:text="@string/contact_course_no"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -342,7 +335,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:inputType="text"
-                android:text="Course No 1"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -358,7 +350,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="COURSE"
+                android:text="@string/contact_course"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -384,7 +376,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:inputType="text"
-                android:text="Course 2"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -400,7 +391,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="COURSE NUMBER"
+                android:text="@string/contact_course_no"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -426,7 +417,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:inputType="text"
-                android:text="Course No 2"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 

@@ -22,7 +22,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="NAME"
+                android:text="@string/contact_name"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -47,7 +47,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="Name"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -63,7 +62,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="POSITION"
+                android:text="@string/contact_position"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -88,7 +87,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="Position"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -104,7 +102,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="EMAIL"
+                android:text="@string/contact_email"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -129,7 +127,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="Email"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -145,7 +142,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="PHONE"
+                android:text="@string/contact_phone"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -170,7 +167,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="Phone"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -186,7 +182,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="OFFICE"
+                android:text="@string/contact_office"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -211,7 +207,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="Office"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -227,7 +222,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="OFFICE HOURS"
+                android:text="@string/contact_office_hours"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -252,7 +247,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="Office Hours"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -268,7 +262,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="COURSES"
+                android:text="@string/contact_courses"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textColor="#00B4D6"
                 android:textStyle="bold" />
@@ -293,7 +287,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="Course 1"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -309,7 +302,6 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:text="Course 2"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
