@@ -32,5 +32,7 @@
 	<string name="course_days">DAYS</string>
 	<string name="course_time">TIME</string>
 	<string name="add_event">Add</string>
+	<string name="save_event">Save</string>
+	<string name="delete_event">Delete</string>
 
 </resources>

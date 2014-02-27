@@ -5,10 +5,13 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class EditEventActivity extends Activity implements OnClickListener {
 
@@ -66,6 +69,27 @@ public class EditEventActivity extends Activity implements OnClickListener {
 		data.putExtra("Position", eventPosition);
 		setResult(RESULT_OK, data);
 		super.finish();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.edit_event_menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.save_event:
+			event.setNote(editTextEventNote.getText().toString());
+			event.setType(editTextEventType.getText().toString());
+			event.setDay(editTextEventDay.getText().toString());
+			event.setTime(editTextEventTime.getText().toString());
+			finish();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 }
