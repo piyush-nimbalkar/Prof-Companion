@@ -42,13 +42,15 @@
 
             <EditText
                 android:id="@+id/editTextEditEventNote"
-                android:inputType="text"
-                android:cursorVisible="true"
-                android:layout_width="0dip"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:cursorVisible="true"
+                android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -84,12 +86,14 @@
 
             <EditText
                 android:id="@+id/editTextEditEventType"
-                android:inputType="text"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -123,18 +127,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
-		    <EditText
+            <EditText
                 android:id="@+id/editTextEditEventDay"
-                android:inputType="text"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
-		<TableRow
+        <TableRow
             android:id="@+id/tableRowEditEvent5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
@@ -164,17 +170,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
-		    <EditText
+            <EditText
                 android:id="@+id/editTextEditEventTime"
-                android:inputType="text"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
-        </TableRow>
 
+        </TableRow>
     </TableLayout>
 
 </ScrollView>

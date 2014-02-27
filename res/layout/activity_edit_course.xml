@@ -42,11 +42,13 @@
 
             <EditText
                 android:id="@+id/editTextEditCourseNumber"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="number"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
@@ -83,11 +85,13 @@
 
             <EditText
                 android:id="@+id/editTextEditCourseName"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
@@ -124,11 +128,13 @@
 
             <EditText
                 android:id="@+id/editTextEditCourseCredits"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="numberDecimal"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
@@ -165,11 +171,13 @@
 
             <EditText
                 android:id="@+id/editTextEditCourseDays"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
@@ -206,15 +214,16 @@
 
             <EditText
                 android:id="@+id/editTextEditCourseTime"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
-
     </TableLayout>
 
 </ScrollView>

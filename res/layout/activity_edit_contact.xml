@@ -8,7 +8,7 @@
     <TableLayout
         android:id="@+id/TableLayoutEditContact"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" >
 
         <TableRow
             android:id="@+id/tableRowEditContact1"
@@ -42,11 +42,13 @@
 
             <EditText
                 android:id="@+id/editTextName"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
@@ -83,16 +85,18 @@
 
             <EditText
                 android:id="@+id/editTextPosition"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
-		<TableRow
+        <TableRow
             android:id="@+id/tableRowEditContact5"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
@@ -124,11 +128,13 @@
 
             <EditText
                 android:id="@+id/editTextEmail"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="textEmailAddress"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
@@ -165,11 +171,13 @@
 
             <EditText
                 android:id="@+id/editTextPhone"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="phone"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
@@ -206,16 +214,18 @@
 
             <EditText
                 android:id="@+id/editTextOffice"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
-		<TableRow
+        <TableRow
             android:id="@+id/tableRowEditContact11"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
@@ -247,16 +257,18 @@
 
             <EditText
                 android:id="@+id/editTextOfficeHours"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
-                <TableRow
+        <TableRow
             android:id="@+id/tableRowEditContact13"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
@@ -288,11 +300,13 @@
 
             <EditText
                 android:id="@+id/editTextCourse1"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
@@ -329,16 +343,18 @@
 
             <EditText
                 android:id="@+id/editTextCourseNo1"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
-		<TableRow
+        <TableRow
             android:id="@+id/tableRowEditContact17"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
@@ -370,16 +386,18 @@
 
             <EditText
                 android:id="@+id/editTextCourse2"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
-		<TableRow
+        <TableRow
             android:id="@+id/tableRowEditContact19"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
@@ -411,15 +429,16 @@
 
             <EditText
                 android:id="@+id/editTextCourseNo2"
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:inputType="text"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
-
-	</TableLayout>
+    </TableLayout>
 
 </ScrollView>
