@@ -1,6 +1,5 @@
 package com.example.diary;
 
-import model.Event;
 import model.News;
 import android.app.Activity;
 import android.content.Intent;

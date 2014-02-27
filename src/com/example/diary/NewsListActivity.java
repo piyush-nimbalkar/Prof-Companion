@@ -2,7 +2,6 @@ package com.example.diary;
 
 import java.util.ArrayList;
 
-import model.Event;
 import model.News;
 
 import android.app.Activity;
