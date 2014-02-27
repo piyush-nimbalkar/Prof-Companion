@@ -10,6 +10,13 @@ public class Event implements Parcelable {
 	private String day;
 	private String note;
 
+	public Event() {
+		type = "";
+		time = "";
+		day = "";
+		note = "";
+	}
+
 	public Event(String _type, String _time, String _day, String _note) {
 		type = _type;
 		time = _time;

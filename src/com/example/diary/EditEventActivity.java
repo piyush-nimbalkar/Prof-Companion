@@ -35,10 +35,7 @@ public class EditEventActivity extends Activity {
 		editTextEventNote = (EditText) findViewById(R.id.editTextEditEventNote);
 		
 		eventPosition = getIntent().getIntExtra("Position", -1);
-		if (eventPosition == -1)
-			event = new Event("", "", "", "");
-		else
-			event = getIntent().getParcelableExtra("Event");
+		event = (Event) ((eventPosition == -1) ? new Event() : getIntent().getParcelableExtra("Event"));
 
 		editTextEventType.setText(event.getType());
 		editTextEventDay.setText(event.getDay());
