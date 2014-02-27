@@ -7,14 +7,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Toast;
 
 public class EventListActivity extends Activity implements OnItemClickListener {
 
-	private final int REQUEST_CODE1 = 1;
+	private final int REQUEST_EDIT = 1;
+	private final int REQUEST_ADD = 2;
 	private Context context;
 	private ArrayList<Event> events = new ArrayList<Event>();
 	private ListView listview;
@@ -37,15 +41,22 @@ public class EventListActivity extends Activity implements OnItemClickListener {
 		Intent i = new Intent(context, EditEventActivity.class);
 		i.putExtra("Event", event);
 		i.putExtra("Position", position);
-		startActivityForResult(i, REQUEST_CODE1);
+		startActivityForResult(i, REQUEST_EDIT);
 	}
-	
+
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK){
+		if (resultCode == RESULT_OK) {
 			Event event = (Event) data.getExtras().get("Event");
-			int position = data.getIntExtra("Position", 0);
-			events.remove(position);
-			events.add(position, event);
+			switch (requestCode) {
+			case REQUEST_EDIT:
+				int position = data.getIntExtra("Position", 0);
+				events.remove(position);
+				events.add(position, event);
+				break;
+			case REQUEST_ADD:
+				events.add(event);
+				break;
+			}
 			final EventArrayAdaptor adapter = new EventArrayAdaptor(this, events);
 			listview.setAdapter(adapter);
 		}
@@ -57,6 +68,25 @@ public class EventListActivity extends Activity implements OnItemClickListener {
 		data.putParcelableArrayListExtra("Events", events);
 		setResult(RESULT_OK, data);
 		super.finish();
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.add_event:
+			Toast.makeText(context, "hawa hawa", Toast.LENGTH_LONG).show();
+			Intent i = new Intent(context, EditEventActivity.class);
+			startActivityForResult(i, REQUEST_ADD);
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 }

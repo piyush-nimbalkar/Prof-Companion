@@ -33,8 +33,11 @@ public class EditEventActivity extends Activity implements OnClickListener {
 		editTextEventNote = (EditText) findViewById(R.id.editTextEditEventNote);
 		buttonEditEventDone = (Button) findViewById(R.id.buttonEditEventDone);
 		
-		event = getIntent().getParcelableExtra("Event");
-		eventPosition = getIntent().getIntExtra("Position", 0);
+		eventPosition = getIntent().getIntExtra("Position", -1);
+		if (eventPosition == -1)
+			event = new Event("", "", "", "");
+		else
+			event = getIntent().getParcelableExtra("Event");
 
 		editTextEventType.setText(event.getType());
 		editTextEventDay.setText(event.getDay());
