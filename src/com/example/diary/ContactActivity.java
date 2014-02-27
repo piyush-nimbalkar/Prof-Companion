@@ -6,17 +6,16 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.TextView;
 
-public class ContactActivity extends Activity implements OnClickListener {
+public class ContactActivity extends Activity {
 
 	private final int REQUEST_CODE1 = 1;
+
 	final Context context = this;
 	private Contact contact;
-	private Button buttonEditContact;
 	private TextView textViewName, textViewPosition, textViewEmail, textViewPhone;
 	private TextView textViewOffice, textViewOfficeHours, textViewCourse1, textViewCourse2;
 
@@ -25,7 +24,6 @@ public class ContactActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_contact);
 
-		buttonEditContact = (Button) findViewById(R.id.buttonEdit);
 		textViewName = (TextView) findViewById(R.id.textViewName);
 		textViewPosition = (TextView) findViewById(R.id.textViewPosition);
 		textViewEmail = (TextView) findViewById(R.id.textViewEventNote);
@@ -45,24 +43,30 @@ public class ContactActivity extends Activity implements OnClickListener {
 		textViewOfficeHours.setText(contact.getOfficeHours());
 		textViewCourse1.setText(courseInformation(contact, 0));
 		textViewCourse2.setText(courseInformation(contact, 1));
-		buttonEditContact.setOnClickListener(this);
 	}
 
 	@Override
-	public void onClick(View v) {
-		switch(v.getId()) {
-		case R.id.buttonEdit:
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.contact_details_menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.edit_contact:
 			Intent i = new Intent(context, EditContactActivity.class);
 			i.putExtra("Contact", contact);
 			startActivityForResult(i, REQUEST_CODE1);
-			break;
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
 		}
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK){
 				contact = (Contact) data.getExtras().get("Contact");
-
 				textViewName.setText(contact.getName());
 				textViewPosition.setText(contact.getPosition());
 				textViewEmail.setText(contact.getEmail());
