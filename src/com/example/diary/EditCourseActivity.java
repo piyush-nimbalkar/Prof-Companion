@@ -4,13 +4,12 @@ import model.Course;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.EditText;
 
 
-public class EditCourseActivity extends Activity implements OnClickListener {
+public class EditCourseActivity extends Activity {
 
 	private Course course;
 
@@ -19,8 +18,6 @@ public class EditCourseActivity extends Activity implements OnClickListener {
 	private EditText editTextCourseCredits;
 	private EditText editTextCourseDays;
 	private EditText editTextCourseTime;
-
-	private Button buttonEditCourseDone;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,7 +28,6 @@ public class EditCourseActivity extends Activity implements OnClickListener {
 		editTextCourseCredits = (EditText) findViewById(R.id.editTextEditCourseCredits);
 		editTextCourseDays = (EditText) findViewById(R.id.editTextEditCourseDays);
 		editTextCourseTime = (EditText) findViewById(R.id.editTextEditCourseTime);
-		buttonEditCourseDone = (Button) findViewById(R.id.buttonEditCourseDone);
 		
 		course = (Course) getIntent().getParcelableExtra("Course");
 		
@@ -40,29 +36,35 @@ public class EditCourseActivity extends Activity implements OnClickListener {
 		editTextCourseCredits.setText(course.getCreditHours());
 		editTextCourseDays.setText(course.getDays());
 		editTextCourseTime.setText(course.getTime());
-		
-		buttonEditCourseDone.setOnClickListener(this);
 	}
-	
+
 	@Override
-	public void onClick(View v) {
-		switch(v.getId()) {
-		case R.id.buttonEditCourseDone:
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.edit_course_menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.save_course:
 			course.setCourseNumber(editTextCourseCode.getText().toString());
 			course.setCourseTitle(editTextCourseName.getText().toString());
 			course.setCreditHours(editTextCourseCredits.getText().toString());
 			course.setDays(editTextCourseDays.getText().toString());
 			course.setTime(editTextCourseTime.getText().toString());
 			finish();
-			break;
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
 		}
 	}
-	
+
 	public void finish() {
 		Intent data = new Intent();
 		data.putExtra("Course", course);
 		setResult(RESULT_OK, data);
 		super.finish();		
 	}
-	
+
 }
