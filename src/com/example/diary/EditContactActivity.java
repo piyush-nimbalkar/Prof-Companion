@@ -7,18 +7,16 @@ import model.Contact;
 import model.CurrentCourse;
 import android.app.Activity;
 import android.content.Intent;
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
 
-public class EditContactActivity extends Activity implements OnClickListener {
+public class EditContactActivity extends Activity {
 
 	private Contact contact;
 	private EditText editName, editPosition, editEmail, editPhone, editOffice, editOfficeHours;
 	private EditText editCourse1, editCourseNo1, editCourse2, editCourseNo2;
-	private Button doneEditing;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +33,6 @@ public class EditContactActivity extends Activity implements OnClickListener {
 		editCourseNo1 = (EditText) findViewById(R.id.editTextCourseNo1);
 		editCourse2 = (EditText) findViewById(R.id.editTextCourse2);
 		editCourseNo2 = (EditText) findViewById(R.id.editTextCourseNo2);
-		doneEditing = (Button) findViewById(R.id.buttonContactEditDone);
 		
 		contact = (Contact) getIntent().getSerializableExtra("Contact");
 		
@@ -49,13 +46,18 @@ public class EditContactActivity extends Activity implements OnClickListener {
 		editCourseNo1.setText(contact.getCurrentCourses().get(0).getCRN());
 		editCourse2.setText(contact.getCurrentCourses().get(1).getName());
 		editCourseNo2.setText(contact.getCurrentCourses().get(1).getCRN());
-		
-		doneEditing.setOnClickListener(this);
 	}
 
-	public void onClick(View v) {
-		switch(v.getId()) {
-		case R.id.buttonContactEditDone:
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.edit_contact_menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.save_contact:
 			contact.setName(editName.getText().toString());
 			contact.setPosition(editPosition.getText().toString());
 			contact.setEmail(editEmail.getText().toString());
@@ -67,10 +69,12 @@ public class EditContactActivity extends Activity implements OnClickListener {
 			courses.add(new CurrentCourse(editCourse2.getText().toString(), editCourseNo2.getText().toString()));
 			contact.setCurrentCourses(courses);
 			finish();
-			break;
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
 		}
 	}
-	
+
 	public void finish() {
 		Intent data = new Intent();
 		data.putExtra("Contact", contact);
