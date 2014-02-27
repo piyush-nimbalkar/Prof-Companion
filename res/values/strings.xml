@@ -30,7 +30,7 @@
 	<string name="course_credit_hours">CREDIT HOURS</string>
 	<string name="course_days">DAYS</string>
 	<string name="course_time">TIME</string>
-	<string name="add_event">Add</string>
+	<string name="add">Add</string>
 	<string name="save">Save</string>
 	<string name="delete">Delete</string>
 

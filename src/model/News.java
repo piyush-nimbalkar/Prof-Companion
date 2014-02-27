@@ -9,6 +9,12 @@ public class News implements Parcelable {
 	private String keyword;
 	private String highlights;
 
+	public News() {
+		title = "";
+		keyword = "";
+		highlights = "";
+	}
+
 	public News(String _title, String _keyword, String _highlights) {
 		title = _title;
 		keyword = _keyword;

@@ -1,5 +1,6 @@
 package com.example.diary;
 
+import model.Event;
 import model.News;
 import android.app.Activity;
 import android.content.Intent;
@@ -25,8 +26,8 @@ public class EditNewsActivity extends Activity {
 		editTextNewsKeyword = (EditText) findViewById(R.id.editTextEditNewsKeyword);
 		editTextNewsHighlights = (EditText) findViewById(R.id.editTextEditNewsHighlights);
 
-		newsItem = getIntent().getParcelableExtra("NewsItem");
-		newsItemPosition = getIntent().getIntExtra("Position", 0);
+		newsItemPosition = getIntent().getIntExtra("Position", -1);
+		newsItem = (News) ((newsItemPosition == -1) ? new News() : getIntent().getParcelableExtra("NewsItem"));
 
 		editTextNewsTitle.setText(newsItem.getTitle());
 		editTextNewsKeyword.setText(newsItem.getKeyword());

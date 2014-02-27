@@ -9,6 +9,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -16,7 +18,8 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class NewsListActivity extends Activity implements OnItemClickListener {
 
-	private final int REQUEST_CODE1 = 1;
+	private final int REQUEST_EDIT= 1;
+	private final int REQUEST_ADD = 2;
 	private final int RESULT_DELETED = 3;
 
 	private Context context;
@@ -41,23 +44,48 @@ public class NewsListActivity extends Activity implements OnItemClickListener {
 		Intent i = new Intent(context, EditNewsActivity.class);
 		i.putExtra("NewsItem", news_item);
 		i.putExtra("Position", position);
-		startActivityForResult(i, REQUEST_CODE1);
+		startActivityForResult(i, REQUEST_EDIT);
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == REQUEST_CODE1) {
+		if (resultCode == RESULT_OK) {
 			News news_item = (News) data.getExtras().get("NewsItem");
-			int position = data.getIntExtra("Position", 0);
-			if (resultCode == RESULT_OK) {
+			switch (requestCode) {
+			case REQUEST_EDIT:
+				int position = data.getIntExtra("Position", 0);
 				news.remove(position);
 				news.add(position, news_item);
-			} else if (resultCode == RESULT_DELETED) {
-				news.remove(position);
+				break;
+			case REQUEST_ADD:
+				news.add(news_item);
+				break;
 			}
-			final NewsArrayAdapter adapter = new NewsArrayAdapter(this, news);
-			listView.setAdapter(adapter);
+		} else if (resultCode == RESULT_DELETED) {
+			int position = data.getIntExtra("Position", -1);
+			if (requestCode == REQUEST_EDIT)
+				news.remove(position);
 		}
+		final NewsArrayAdapter adapter = new NewsArrayAdapter(this, news);
+		listView.setAdapter(adapter);
 		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.news_list_menu, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case R.id.add_news_item:
+			Intent i = new Intent(context, EditNewsActivity.class);
+			startActivityForResult(i, REQUEST_ADD);
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 	public void finish() {
