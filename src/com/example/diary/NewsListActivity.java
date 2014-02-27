@@ -2,6 +2,7 @@ package com.example.diary;
 
 import java.util.ArrayList;
 
+import model.Event;
 import model.News;
 
 import android.app.Activity;
@@ -16,6 +17,8 @@ import android.widget.AdapterView.OnItemClickListener;
 public class NewsListActivity extends Activity implements OnItemClickListener {
 
 	private final int REQUEST_CODE1 = 1;
+	private final int RESULT_DELETED = 3;
+
 	private Context context;
 	private ListView listView;
 	private ArrayList<News> news = new ArrayList<News>();
@@ -42,11 +45,15 @@ public class NewsListActivity extends Activity implements OnItemClickListener {
 	}
 
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK){
+		if (requestCode == REQUEST_CODE1) {
 			News news_item = (News) data.getExtras().get("NewsItem");
 			int position = data.getIntExtra("Position", 0);
-			news.remove(position);
-			news.add(position, news_item);
+			if (resultCode == RESULT_OK) {
+				news.remove(position);
+				news.add(position, news_item);
+			} else if (resultCode == RESULT_DELETED) {
+				news.remove(position);
+			}
 			final NewsArrayAdapter adapter = new NewsArrayAdapter(this, news);
 			listView.setAdapter(adapter);
 		}

@@ -48,7 +48,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:inputType="text"
-                android:text="News Title"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -90,7 +89,6 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:inputType="text"
-                android:text="Keyword"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -132,25 +130,8 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
                 android:inputType="text"
-                android:text="Highlights"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
-
-		<RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <Button
-                android:id="@+id/buttonEditNewsDone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="70dp"
-                android:layout_marginRight="70dp"
-                android:layout_marginTop="20dp"
-                android:text="Done" />
-        </RelativeLayout>
 
 	</TableLayout>
 

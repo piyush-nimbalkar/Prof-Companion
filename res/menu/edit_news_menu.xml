@@ -2,13 +2,13 @@
 	xmlns:yourapp="http://schemas.android.com/apk/res-auto" >
 
     <item
-        android:id="@+id/delete_event"
+        android:id="@+id/delete_news"
         android:icon="@drawable/ic_action_delete"
         android:showAsAction="ifRoom"
         android:title="@string/delete"/>
 
     <item
-        android:id="@+id/save_event"
+        android:id="@+id/save_news"
         android:icon="@drawable/ic_action_done"
         android:showAsAction="ifRoom"
         android:title="@string/save"/>
