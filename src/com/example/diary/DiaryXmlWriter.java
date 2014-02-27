@@ -65,7 +65,7 @@ public class DiaryXmlWriter {
 			xmlSerializer.startTag("", "events");
 			xmlSerializer.attribute("", "day", event.getDay());
 			xmlSerializer.attribute("", "note", event.getNote());
-			xmlSerializer.attribute("", "time", event.getType());
+			xmlSerializer.attribute("", "time", event.getTime());
 			xmlSerializer.attribute("", "type", event.getType());
 			xmlSerializer.endTag("", "events");
 		}
