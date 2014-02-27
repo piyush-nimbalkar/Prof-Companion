@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 public class EditEventActivity extends Activity implements OnClickListener {
 
+	private final int RESULT_DELETED = 3;
 	final Context context = this;
 	private Event event;
 	private int eventPosition;
@@ -29,7 +30,7 @@ public class EditEventActivity extends Activity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_event);
-		
+
 		editTextEventType = (EditText) findViewById(R.id.editTextEditEventType);
 		editTextEventDay = (EditText) findViewById(R.id.editTextEditEventDay);
 		editTextEventTime = (EditText) findViewById(R.id.editTextEditEventTime);
@@ -67,7 +68,8 @@ public class EditEventActivity extends Activity implements OnClickListener {
 		Intent data = new Intent();
 		data.putExtra("Event", event);
 		data.putExtra("Position", eventPosition);
-		setResult(RESULT_OK, data);
+		int resultCode = (event == null) ? RESULT_DELETED : RESULT_OK;
+		setResult(resultCode, data);
 		super.finish();
 	}
 
@@ -85,6 +87,10 @@ public class EditEventActivity extends Activity implements OnClickListener {
 			event.setType(editTextEventType.getText().toString());
 			event.setDay(editTextEventDay.getText().toString());
 			event.setTime(editTextEventTime.getText().toString());
+			finish();
+			return true;
+		case R.id.delete_event:
+			event = null;
 			finish();
 			return true;
 		default:

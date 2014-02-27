@@ -19,6 +19,8 @@ public class EventListActivity extends Activity implements OnItemClickListener {
 
 	private final int REQUEST_EDIT = 1;
 	private final int REQUEST_ADD = 2;
+	private final int RESULT_DELETED = 3;
+
 	private Context context;
 	private ArrayList<Event> events = new ArrayList<Event>();
 	private ListView listview;
@@ -57,9 +59,13 @@ public class EventListActivity extends Activity implements OnItemClickListener {
 				events.add(event);
 				break;
 			}
-			final EventArrayAdaptor adapter = new EventArrayAdaptor(this, events);
-			listview.setAdapter(adapter);
+		} else if (resultCode == RESULT_DELETED) {
+			int position = data.getIntExtra("Position", -1);
+			if (requestCode == REQUEST_EDIT)
+				events.remove(position);
 		}
+		final EventArrayAdaptor adapter = new EventArrayAdaptor(this, events);
+		listview.setAdapter(adapter);
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
