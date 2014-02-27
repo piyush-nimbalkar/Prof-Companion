@@ -11,12 +11,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class EventArrayAdaptor extends ArrayAdapter<Event> {
+public class EventArrayAdapter extends ArrayAdapter<Event> {
 
 	private final Context context;
 	private final List<Event> values;
 
-	public EventArrayAdaptor(Context context, List<Event> values) {
+	public EventArrayAdapter(Context context, List<Event> values) {
 		super(context, R.layout.event_row_layout, values);
 		this.context = context;
 		this.values = values;

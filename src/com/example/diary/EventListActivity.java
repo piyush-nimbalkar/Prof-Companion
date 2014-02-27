@@ -31,7 +31,7 @@ public class EventListActivity extends Activity implements OnItemClickListener {
 		listview = (ListView) findViewById(R.id.listViewEvents);
 		events = getIntent().getParcelableArrayListExtra("Events");
 
-		final EventArrayAdaptor adapter = new EventArrayAdaptor(this, events);
+		final EventArrayAdapter adapter = new EventArrayAdapter(this, events);
 		listview.setAdapter(adapter);
 		listview.setOnItemClickListener(this);
 	}
@@ -63,7 +63,7 @@ public class EventListActivity extends Activity implements OnItemClickListener {
 			if (requestCode == REQUEST_EDIT)
 				events.remove(position);
 		}
-		final EventArrayAdaptor adapter = new EventArrayAdaptor(this, events);
+		final EventArrayAdapter adapter = new EventArrayAdapter(this, events);
 		listview.setAdapter(adapter);
 		super.onActivityResult(requestCode, resultCode, data);
 	}

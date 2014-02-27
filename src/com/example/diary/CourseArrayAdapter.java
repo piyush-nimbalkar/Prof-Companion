@@ -11,11 +11,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class CourseArrayAdaptor extends ArrayAdapter<Course>{
+public class CourseArrayAdapter extends ArrayAdapter<Course>{
 	private final Context context;
 	private final List<Course> values;
 
-	public CourseArrayAdaptor(Context context, List<Course> values) {
+	public CourseArrayAdapter(Context context, List<Course> values) {
 		super(context, R.layout.course_row_layout, values);
 		this.context = context;
 		this.values = values;

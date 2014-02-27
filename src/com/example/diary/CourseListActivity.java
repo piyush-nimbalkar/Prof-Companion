@@ -29,7 +29,7 @@ public class CourseListActivity extends Activity implements OnItemClickListener 
 		listview = (ListView) findViewById(R.id.listViewCourses);
 		courses = getIntent().getParcelableArrayListExtra("Courses");
 
-		final CourseArrayAdaptor adapter = new CourseArrayAdaptor(this, courses);
+		final CourseArrayAdapter adapter = new CourseArrayAdapter(this, courses);
 		listview.setAdapter(adapter);
 		listview.setOnItemClickListener(this);
 	}
@@ -52,7 +52,7 @@ public class CourseListActivity extends Activity implements OnItemClickListener 
 		} else if (requestCode == REQUEST_EDIT && resultCode == RESULT_DELETED) {
 			courses.remove(position);
 		}
-		final CourseArrayAdaptor adapter_refresh = new CourseArrayAdaptor(this, courses);
+		final CourseArrayAdapter adapter_refresh = new CourseArrayAdapter(this, courses);
 		listview.setAdapter(adapter_refresh);
 		listview.setOnItemClickListener(this);
 		super.onActivityResult(requestCode, resultCode, data);
