@@ -2,6 +2,12 @@
 	xmlns:yourapp="http://schemas.android.com/apk/res-auto" >
 
     <item
+        android:id="@+id/delete_course"
+        android:icon="@drawable/ic_action_delete"
+        android:showAsAction="ifRoom"
+        android:title="@string/delete"/>
+
+    <item
         android:id="@+id/edit_course"
         android:icon="@drawable/ic_action_edit"
         android:showAsAction="ifRoom"

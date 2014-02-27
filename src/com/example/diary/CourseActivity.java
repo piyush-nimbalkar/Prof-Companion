@@ -12,6 +12,8 @@ import android.widget.TextView;
 public class CourseActivity extends Activity {
 
 	private final int REQUEST_EDIT = 1;
+	private final int RESULT_DELETED = 3;
+
 	final Context context = this;
 
 	private Course course;
@@ -70,6 +72,10 @@ public class CourseActivity extends Activity {
 			i.putExtra("Course", course);
 			startActivityForResult(i, REQUEST_EDIT);
 			return true;
+		case R.id.delete_course:
+			course = null;
+			finish();
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
@@ -79,7 +85,8 @@ public class CourseActivity extends Activity {
 		Intent data = new Intent();
 		data.putExtra("Course", course);
 		data.putExtra("Position", coursePosition);
-		setResult(RESULT_OK, data);
+		int resultCode = (course == null) ? RESULT_DELETED : RESULT_OK;
+		setResult(resultCode, data);
 		super.finish();
 	}
 
