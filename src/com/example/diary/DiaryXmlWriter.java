@@ -34,8 +34,51 @@ public class DiaryXmlWriter {
 		xmlSerializer.setOutput(writer);
 
 		xmlSerializer.startDocument("UTF-8", true);
-
 		xmlSerializer.startTag("", "items");
+		writeContact(xmlSerializer);
+		writeCourses(xmlSerializer);
+		writeEvents(xmlSerializer);
+		writeNews(xmlSerializer);
+		xmlSerializer.endTag("", "items");
+		xmlSerializer.endDocument();
+
+		return writer.toString();
+	}
+
+	private void writeNews(XmlSerializer xmlSerializer) throws IOException {
+		for (News news_item: news) {
+			xmlSerializer.startTag("", "news");
+			xmlSerializer.attribute("", "highlights", news_item.getHighlights());
+			xmlSerializer.attribute("", "keyword", news_item.getKeyword());
+			xmlSerializer.attribute("", "title", news_item.getTitle());
+			xmlSerializer.endTag("", "news");
+		}
+	}
+
+	private void writeEvents(XmlSerializer xmlSerializer) throws IOException {
+		for (Event event: events) {
+			xmlSerializer.startTag("", "events");
+			xmlSerializer.attribute("", "day", event.getDay());
+			xmlSerializer.attribute("", "note", event.getNote());
+			xmlSerializer.attribute("", "time", event.getTime());
+			xmlSerializer.attribute("", "type", event.getType());
+			xmlSerializer.endTag("", "events");
+		}
+	}
+
+	private void writeCourses(XmlSerializer xmlSerializer) throws IOException {
+		for (Course course: courses) {
+			xmlSerializer.startTag("", "courses");
+			xmlSerializer.attribute("", "CN", course.getCourseNumber());
+			xmlSerializer.attribute("", "Days", course.getDays());
+			xmlSerializer.attribute("", "Time", course.getTime());
+			xmlSerializer.attribute("", "courseTitle", course.getCourseTitle());
+			xmlSerializer.attribute("", "creditHours", course.getCreditHours());
+			xmlSerializer.endTag("", "courses");
+		}
+	}
+
+	private void writeContact(XmlSerializer xmlSerializer) throws IOException {
 		xmlSerializer.startTag("", "contact");
 		xmlSerializer.attribute("", "name", contact.getName());
 		xmlSerializer.attribute("", "email", contact.getEmail());
@@ -50,38 +93,6 @@ public class DiaryXmlWriter {
 			xmlSerializer.endTag("", "course");
 		}
 		xmlSerializer.endTag("", "contact");
-
-		for (Course course: courses) {
-			xmlSerializer.startTag("", "courses");
-			xmlSerializer.attribute("", "CN", course.getCourseNumber());
-			xmlSerializer.attribute("", "Days", course.getDays());
-			xmlSerializer.attribute("", "Time", course.getTime());
-			xmlSerializer.attribute("", "courseTitle", course.getCourseTitle());
-			xmlSerializer.attribute("", "creditHours", course.getCreditHours());
-			xmlSerializer.endTag("", "courses");
-		}
-
-		for (Event event: events) {
-			xmlSerializer.startTag("", "events");
-			xmlSerializer.attribute("", "day", event.getDay());
-			xmlSerializer.attribute("", "note", event.getNote());
-			xmlSerializer.attribute("", "time", event.getTime());
-			xmlSerializer.attribute("", "type", event.getType());
-			xmlSerializer.endTag("", "events");
-		}
-
-		for (News news_item: news) {
-			xmlSerializer.startTag("", "news");
-			xmlSerializer.attribute("", "highlights", news_item.getHighlights());
-			xmlSerializer.attribute("", "keyword", news_item.getKeyword());
-			xmlSerializer.attribute("", "title", news_item.getTitle());
-			xmlSerializer.endTag("", "news");
-		}
-
-		xmlSerializer.endTag("", "items");
-		xmlSerializer.endDocument();
-
-		return writer.toString();
 	}
 
 }
