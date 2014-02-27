@@ -80,7 +80,6 @@ public class EventListActivity extends Activity implements OnItemClickListener {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.add_event:
-			Toast.makeText(context, "hawa hawa", Toast.LENGTH_LONG).show();
 			Intent i = new Intent(context, EditEventActivity.class);
 			startActivityForResult(i, REQUEST_ADD);
 			return true;
