@@ -11,37 +11,118 @@
     <Button
         android:id="@+id/buttonContact"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="25dp"
+        android:background="#00CAF0"
         android:text="@string/contact" />
+
+    <View
+        android:id="@+id/shadow1"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/buttonContact"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="29dp"
+        android:background="#0087A1" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="55dp"
+        android:layout_alignBottom="@+id/shadow1"
+        android:layout_alignRight="@+id/shadow1"
+        android:background="#0087A1" />
 
     <Button
         android:id="@+id/buttonCourses"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_alignLeft="@+id/buttonContact"
+        android:layout_alignRight="@+id/buttonContact"
         android:layout_below="@+id/buttonContact"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
+        android:background="#00CAF0"
         android:text="@string/courses_taught" />
+
+	<View
+        android:id="@+id/shadow2"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/buttonCourses"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="29dp"
+        android:background="#0087A1" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="55dp"
+        android:layout_alignBottom="@+id/shadow2"
+        android:layout_alignRight="@+id/shadow2"
+        android:background="#0087A1" />
 
     <Button
         android:id="@+id/buttonEvents"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_alignLeft="@+id/buttonCourses"
+        android:layout_alignRight="@+id/buttonCourses"
         android:layout_below="@+id/buttonCourses"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
+        android:background="#00CAF0"
         android:text="@string/events" />
+
+    <View
+        android:id="@+id/shadow3"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/buttonEvents"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="29dp"
+        android:background="#0087A1" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="55dp"
+        android:layout_alignBottom="@+id/shadow3"
+        android:layout_alignRight="@+id/shadow3"
+        android:background="#0087A1" />
 
     <Button
         android:id="@+id/buttonNews"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="55dp"
         android:layout_alignLeft="@+id/buttonEvents"
+        android:layout_alignRight="@+id/buttonEvents"
         android:layout_below="@+id/buttonEvents"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
+        android:background="#00CAF0"
         android:text="@string/news" />
+
+	<View
+        android:id="@+id/shadow4"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/buttonNews"
+        android:layout_marginLeft="31dp"
+        android:layout_marginRight="29dp"
+        android:background="#0087A1" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="55dp"
+        android:layout_alignBottom="@+id/shadow4"
+        android:layout_alignRight="@+id/shadow4"
+        android:background="#0087A1" />
 
 </RelativeLayout>
