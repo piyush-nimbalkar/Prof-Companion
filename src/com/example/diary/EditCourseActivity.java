@@ -8,7 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
-
+/* An activity which facilitates editing of the course information and
+ * returning it back to the caller Activity
+ */
 public class EditCourseActivity extends Activity {
 
 	private Course course;
@@ -30,7 +32,9 @@ public class EditCourseActivity extends Activity {
 		editTextCourseTime = (EditText) findViewById(R.id.editTextEditCourseTime);
 		
 		course = (Course) getIntent().getParcelableExtra("Course");
-		
+
+		/* Fill out the course information on the screen from the received course object
+		 */		
 		editTextCourseCode.setText(course.getCourseNumber());
 		editTextCourseName.setText(course.getCourseTitle());
 		editTextCourseCredits.setText(course.getCreditHours());
@@ -38,12 +42,17 @@ public class EditCourseActivity extends Activity {
 		editTextCourseTime.setText(course.getTime());
 	}
 
+	/* Menu options for the current screen on the action bar.
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.edit_course_menu, menu);
 		return true;
 	}
 
+	/* Menu options on select callback for this screen. Currently, it only
+	 * lets you edit the course
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -60,6 +69,8 @@ public class EditCourseActivity extends Activity {
 		}
 	}
 
+	/* Return the updated course object back to the caller activity
+	 */
 	public void finish() {
 		Intent data = new Intent();
 		data.putExtra("Course", course);

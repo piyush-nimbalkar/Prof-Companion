@@ -12,6 +12,9 @@ import android.view.MenuItem;
 import android.os.Bundle;
 import android.widget.EditText;
 
+/* An activity which facilitates editing of the contact information and
+ * returning it back to the caller Activity
+ */
 public class EditContactActivity extends Activity {
 
 	private Contact contact;
@@ -48,12 +51,16 @@ public class EditContactActivity extends Activity {
 		editCourseNo2.setText(contact.getCurrentCourses().get(1).getCRN());
 	}
 
+	/* Menu options for the current screen on the action bar.
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.edit_contact_menu, menu);
 		return true;
 	}
 
+	/* Menu option on select callback for the save action button on this screen. 
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -75,6 +82,8 @@ public class EditContactActivity extends Activity {
 		}
 	}
 
+	/* Return the updated contact object back to the caller activity
+	 */
 	public void finish() {
 		Intent data = new Intent();
 		data.putExtra("Contact", contact);

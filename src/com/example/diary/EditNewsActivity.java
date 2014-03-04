@@ -8,6 +8,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+/* An activity which facilitates editing of the news information and
+ * returning it back to the caller Activity
+ */
 public class EditNewsActivity extends Activity {
 
 	private final int RESULT_DELETED = 3;
@@ -28,11 +31,15 @@ public class EditNewsActivity extends Activity {
 		newsItemPosition = getIntent().getIntExtra("Position", -1);
 		newsItem = (News) ((newsItemPosition == -1) ? new News() : getIntent().getParcelableExtra("NewsItem"));
 
+		/* Fill out the news information on the screen from the received news object
+		 */		
 		editTextNewsTitle.setText(newsItem.getTitle());
 		editTextNewsKeyword.setText(newsItem.getKeyword());
 		editTextNewsHighlights.setText(newsItem.getHighlights());
 	}
 
+	/* Return the updated news object back to the caller activity
+	 */
 	public void finish() {
 		Intent data = new Intent();
 		data.putExtra("NewsItem", newsItem);
@@ -42,12 +49,17 @@ public class EditNewsActivity extends Activity {
 		super.finish();
 	}
 
+	/* Menu options for the current screen on the action bar.
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.edit_news_menu, menu);
 		return true;
 	}
 
+	/* Menu options on select callback for this screen. Currently, it only
+	 * lets you edit and delete the news item
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {

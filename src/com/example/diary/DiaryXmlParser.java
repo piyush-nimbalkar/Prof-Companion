@@ -16,6 +16,9 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import android.content.Context;
 
+/* Xml parser for the given format of files which returns an object
+ * containing the parsed objects of Contact, Course, Event and News
+ */
 public class DiaryXmlParser {
 
 	private Context context;
@@ -77,6 +80,8 @@ public class DiaryXmlParser {
 				.setOfficeHour(parser.getAttributeValue(null, "office_hour"))
 				.build();
 
+		/* Parse the current courses from the contact information
+		 */
 		while (parser.next() != XmlPullParser.END_DOCUMENT) {
 			if (parser.getEventType() != XmlPullParser.START_TAG)
 				continue;

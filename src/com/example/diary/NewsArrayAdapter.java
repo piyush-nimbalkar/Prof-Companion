@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+/* Custom Array Adaptor to show the list of news
+ */
 public class NewsArrayAdapter extends ArrayAdapter<News> {
 
 	private final Context context;
@@ -22,6 +24,9 @@ public class NewsArrayAdapter extends ArrayAdapter<News> {
 		this.values = values;
 	}
 
+	/* Override the method to return a custom view which will fill out the news
+	 * information from the passed news list to the adaptor
+	 */
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

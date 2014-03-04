@@ -26,6 +26,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+/* The activity linked to the main screen of the application. It allow navigation
+ * to the four features and also reads and writes the XML file used for data storage
+ */
 public class MainActivity extends Activity implements OnClickListener {
 
 	private final int REQUEST_CODE_CONTACT = 1;
@@ -57,6 +60,10 @@ public class MainActivity extends Activity implements OnClickListener {
 		eventsButton.setOnClickListener(this);
 		newsButton.setOnClickListener(this);
 
+		/* Get the parser depending on the input type. If there is an existing
+		 * XML file in the private storage of the application, then read that file,
+		 * else read the file from the res folder.
+		 */
 		DiaryXmlParser diaryParser = new DiaryXmlParser(this);
 		XmlPullParser parser = getXmlParser();
 
@@ -68,6 +75,8 @@ public class MainActivity extends Activity implements OnClickListener {
 			e.printStackTrace();
 		}
 
+		/* Get the parsed objects from the DiaryXmlParser
+		 */
 		contact = diaryParser.getContact();
 		courses = diaryParser.getCourses();
 		events = diaryParser.getEvents();
@@ -85,6 +94,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		return parser;
 	}
 
+	/* On click of the buttons on the home screen they should open
+	 * respective activities with the corresponding object passed to it.
+	 */
 	@Override
 	public void onClick(View v) {
 		Intent i;
@@ -113,6 +125,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		}
 	}
 
+	/* Store back the objects received from the opened activities as they
+	 * might have been changed in the work flow.
+	 */
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_CODE_CONTACT && resultCode == RESULT_OK)
 			contact = (Contact) data.getExtras().get("Contact");
@@ -125,6 +140,9 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
+	/* When the Main Activity is closed, which means if the application is closed,
+	 * it will store the objects in an XML file in the private internal storage.
+	 */
 	@Override
 	public void finish() {
 		DiaryXmlWriter writer = new DiaryXmlWriter(contact, courses, events, news);
@@ -151,6 +169,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		super.finish();
 	}
 
+	/* Create and return a new XmlPullParser object for the stored file
+	 */
 	private XmlPullParser getParserForStoredFile() {
 		XmlPullParser parser = null;
 		InputStream in = readStoredXmlFile();
@@ -171,6 +191,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		return parser;
 	}
 
+	/* Read and return the contents of the stored XML file
+	 */
 	private InputStream readStoredXmlFile() {
 		FileInputStream fin;
 		StringBuffer fileContent = new StringBuffer("");

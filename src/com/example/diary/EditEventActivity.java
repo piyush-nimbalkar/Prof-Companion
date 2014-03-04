@@ -9,6 +9,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 
+/* An activity which facilitates editing of the event information and
+ * returning it back to the caller Activity
+ */
 public class EditEventActivity extends Activity {
 
 	private final int RESULT_DELETED = 3;
@@ -33,12 +36,16 @@ public class EditEventActivity extends Activity {
 		eventPosition = getIntent().getIntExtra("Position", -1);
 		event = (Event) ((eventPosition == -1) ? new Event() : getIntent().getParcelableExtra("Event"));
 
+		/* Fill out the event information on the screen from the received event object
+		 */		
 		editTextEventType.setText(event.getType());
 		editTextEventDay.setText(event.getDay());
 		editTextEventTime.setText(event.getTime());
 		editTextEventNote.setText(event.getNote());
 	}
 
+	/* Return the updated event object back to the caller activity
+	 */
 	public void finish() {
 		Intent data = new Intent();
 		data.putExtra("Event", event);
@@ -48,12 +55,17 @@ public class EditEventActivity extends Activity {
 		super.finish();
 	}
 
+	/* Menu options for the current screen on the action bar.
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.edit_event_menu, menu);
 		return true;
 	}
 
+	/* Menu options on select callback for this screen. Currently, it only
+	 * lets you edit and delete the event
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {

@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+/* Custom Array Adaptor to show the list of events
+ */
 public class EventArrayAdapter extends ArrayAdapter<Event> {
 
 	private final Context context;
@@ -22,6 +24,9 @@ public class EventArrayAdapter extends ArrayAdapter<Event> {
 		this.values = values;
 	}
 
+	/* Override the method to return a custom view which will fill out the event
+	 * information from the passed events list to the adaptor
+	 */
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

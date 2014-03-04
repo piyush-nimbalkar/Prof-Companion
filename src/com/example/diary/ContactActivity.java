@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+/* An activity to display the contact information of the person / professor
+ */
 public class ContactActivity extends Activity {
 
 	private final int REQUEST_CODE1 = 1;
@@ -34,7 +36,10 @@ public class ContactActivity extends Activity {
 		textViewCourse2 = (TextView) findViewById(R.id.labelEditContactCourse2);
 
 		contact = (Contact) getIntent().getSerializableExtra("Contact");
-
+		
+		/* Fill in the contact information from the contact object that is passed
+		 * from the main screen
+		 */
 		textViewName.setText(contact.getName());
 		textViewPosition.setText(contact.getPosition());
 		textViewEmail.setText(contact.getEmail());
@@ -45,12 +50,17 @@ public class ContactActivity extends Activity {
 		textViewCourse2.setText(courseInformation(contact, 1));
 	}
 
+	/* Menu options for the current screen on the action bar.
+	 */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.contact_details_menu, menu);
 		return true;
 	}
 
+	/* Menu options on select callback for this screen. Currently, it only
+	 * lets you edit the contact information
+	 */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -64,6 +74,10 @@ public class ContactActivity extends Activity {
 		}
 	}
 
+	/* Fill in the contact information from the contact object that is passed
+	 * from edit contact activity i.e. the updated contact information. Also,
+	 * store the updated contact object in the local contact object.
+	 */
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == REQUEST_CODE1 && resultCode == RESULT_OK){
 				contact = (Contact) data.getExtras().get("Contact");
@@ -79,6 +93,9 @@ public class ContactActivity extends Activity {
 		super.onActivityResult(requestCode, resultCode, data);
 	}
 
+	/* Return the contact object back to the Main Activity in-case it has
+	 * been modified in the work flow 
+	 */
 	public void finish() {
 		Intent data = new Intent();
 		data.putExtra("Contact", contact);

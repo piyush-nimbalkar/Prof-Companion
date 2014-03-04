@@ -14,6 +14,9 @@ import model.CurrentCourse;
 import model.Event;
 import model.News;
 
+/* Writes the contents of Contact, Course, Event and News object
+ * into an XML file in the format required by the application
+ */
 public class DiaryXmlWriter {
 
 	private Contact contact;

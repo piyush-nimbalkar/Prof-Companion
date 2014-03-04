@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+/* Custom Array Adaptor to show the list of courses
+ */
 public class CourseArrayAdapter extends ArrayAdapter<Course>{
 	private final Context context;
 	private final List<Course> values;
@@ -21,6 +23,9 @@ public class CourseArrayAdapter extends ArrayAdapter<Course>{
 		this.values = values;
 	}
 
+	/* Override the method to return a custom view which will fill out the course
+	 * information from the passed course list to the adaptor
+	 */
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
